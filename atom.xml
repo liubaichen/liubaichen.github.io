@@ -6,7 +6,7 @@
   <link href="https://liubaichen.github.io/atom.xml" rel="self"/>
   
   <link href="https://liubaichen.github.io/"/>
-  <updated>2023-03-03T07:45:48.440Z</updated>
+  <updated>2023-03-03T10:52:41.141Z</updated>
   <id>https://liubaichen.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>my first article</title>
+    <link href="https://liubaichen.github.io/2023/03/03/my%20first%20article/"/>
+    <id>https://liubaichen.github.io/2023/03/03/my%20first%20article/</id>
+    <published>2023-03-03T10:07:03.000Z</published>
+    <updated>2023-03-03T10:52:41.141Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="我的第一个网站"><a href="#我的第一个网站" class="headerlink" title="我的第一个网站"></a>我的第一个网站</h1><p>经过近两天的折磨，终于用hexo搭建好了网站。虽然过程真的辛苦，甚至有好多次想放弃了（怒砸键盘），但还是坚持了下来。</p><p>这两天的工程主要包括：hexo创建、github部署和添加域名。</p><blockquote><p>域名（kotobanoniwa.xyz）源于《<em><strong>言叶之庭</strong></em>》的罗马音（虽然现在主页的背景是《<em><strong>君の名は</strong></em>》……）</p></blockquote><h2 id="Why"><a href="#Why" class="headerlink" title="Why"></a>Why</h2><p>正值大四下半年，没有什么课，天天都是泡图书馆。毕设那边导师也一点都不急，所以就想做点什么。除了python和网站之外，日语和英语也在同步进行着。</p><h2 id="下一步的打算"><a href="#下一步的打算" class="headerlink" title="下一步的打算"></a>下一步的打算</h2><p>感觉在这上面写点东西还挺好的，<strong>千万不要半途而废啊！</strong></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;我的第一个网站&quot;&gt;&lt;a href=&quot;#我的第一个网站&quot; class=&quot;headerlink&quot; title=&quot;我的第一个网站&quot;&gt;&lt;/a&gt;我的第一个网站&lt;/h1&gt;&lt;p&gt;经过近两天的折磨，终于用hexo搭建好了网站。虽然过程真的辛苦，甚至有好多次想放弃了（怒砸键盘），但</summary>
+      
+    
+    
+    
+    <category term="个人网站" scheme="https://liubaichen.github.io/categories/%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/"/>
+    
+    
+    <category term="个人网站" scheme="https://liubaichen.github.io/tags/%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99/"/>
+    
+    <category term="记录" scheme="https://liubaichen.github.io/tags/%E8%AE%B0%E5%BD%95/"/>
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>
