@@ -6,7 +6,7 @@
   <link href="https://liubaichen.github.io/atom.xml" rel="self"/>
   
   <link href="https://liubaichen.github.io/"/>
-  <updated>2023-03-06T07:47:47.055Z</updated>
+  <updated>2023-03-06T15:03:19.874Z</updated>
   <id>https://liubaichen.github.io/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="https://liubaichen.github.io/2023/03/06/15/34/48/picture-test/"/>
     <id>https://liubaichen.github.io/2023/03/06/15/34/48/picture-test/</id>
     <published>2023-03-06T07:34:48.000Z</published>
-    <updated>2023-03-06T07:47:47.055Z</updated>
+    <updated>2023-03-06T15:03:19.874Z</updated>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="图片与图床使用"><a href="#图片与图床使用" class="headerlink" title="图片与图床使用"></a>图片与图床使用</h1><p>今日工作：</p><ol><li>python面向对象学习和爬虫</li><li>课设计算推进一点（大概吧）</li><li>学习图床使用</li></ol><p>遇到的问题：</p><ol><li>本来想用github当服务器，结果就是生成不了token</li><li>math插件安装失败（应该是npm的原因），暂时无法解决</li></ol><p><img src="https://picgo-liubaichen.oss-cn-beijing.aliyuncs.com/528354450.jpg" title="圆神！"></p>]]></content>
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="图片与图床使用"><a href="#图片与图床使用" class="headerlink" title="图片与图床使用"></a>图片与图床使用</h1><p>今日工作：</p><ol><li>python面向对象学习和爬虫</li><li>课设计算推进一点（大概吧）</li><li>学习图床使用<br><img src="https://picgo-liubaichen.oss-cn-beijing.aliyuncs.com/528354450.jpg" title="圆神！"></li></ol><p>遇到的问题：</p><ol><li>本来想用github当服务器，结果就是生成不了token</li><li>math插件安装失败（应该是npm的原因），暂时无法解决</li><li>学习python写作中遇到txt文件open后的read操作：因为某个窒息的理解错误白白浪费半小时！<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    file1 = open(&#x27;F:\\python\\python_code\\test.txt&#x27;,&#x27;r&#x27;,encoding=&quot;utf8&quot;)</span><br><span class="line">    print(file1.read())            </span><br><span class="line">    #all text</span><br><span class="line">    file1.readlines()    </span><br><span class="line">    file1.close()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><strong>读完第一次后指针都到末尾了，还怎么readlines啊！！！</strong></li></ol>]]></content>
     
     
       
