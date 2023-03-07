@@ -65,6 +65,8 @@
   <!-- 不得不预先加载的一些JS文件 -->
   <script src="/vendors/jquery@3.6.0/dist/jquery.min.js"></script>
   
+    <script src="/vendors/qrcode_js@1.0.0/qrcode.min.js"></script>
+  
   
   <style>
     
@@ -265,6 +267,11 @@
                     字
                 </li>
                 
+                    <li id="/2023/03/04/21/52/30/my-first-scraping/" class="leancloud_visitors" data-flag-title="my first scraping">
+                        <i class="fa fa-eye"></i>
+                        <span class="leancloud-visitors-count"> </span> 次阅读
+                    </li>
+                
             </ul>
         </header>
         <div class="kratos-post-content">
@@ -294,6 +301,81 @@
         
         <footer class="kratos-entry-footer clearfix">
             
+                <div class="post-like-donate text-center clearfix" id="post-like-donate">
+                
+                
+                    <a class="share" href="javascript:;"><i class="fa fa-share-alt"></i> 分享</a>
+                    <div class="share-wrap" style="display: none;">
+    <div class="share-group">
+        <a href="javascript:;" class="share-plain qq" onclick="share('qq');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-qq"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain qzone" onclick="share('qzone');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-star"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain weixin pop style-plain" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-weixin"></i>
+            </div>
+            <div class="share-int">
+                <div class="qrcode" id="wechat-qr"></div>
+                <p>打开微信“扫一扫”，打开网页后点击屏幕右上角分享按钮</p>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain weibo" onclick="share('weibo');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-weibo"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain facebook style-plain" onclick="share('facebook');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-facebook"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain twitter style-plain" onclick="share('twitter');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-twitter"></i>
+            </div>
+        </a>
+    </div>
+    <script type="text/javascript">
+        $(()=>{
+            new QRCode("wechat-qr", {
+                text: "https://liubaichen.github.io/2023/03/04/21/52/30/my-first-scraping/",
+                width: 150,
+                height: 150,
+                correctLevel : QRCode.CorrectLevel.H
+            });
+        });
+        function share(dest) {
+            const qqBase        = "https://connect.qq.com/widget/shareqq/index.html?";
+            const weiboBase     = "https://service.weibo.com/share/share.php?";
+            const qzoneBase     = "https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?";
+            const facebookBase  = "https://www.facebook.com/sharer/sharer.php?";
+            const twitterBase   = "https://twitter.com/intent/tweet?";
+            const hostUrl       = "https://liubaichen.github.io/2023/03/04/21/52/30/my-first-scraping/";
+            const title         = "「my first scraping」";
+            const excerpt       = `我的第一个爬虫今日工作：浅尝辄止地学习了html、css和javascript，可以读懂基本语句；回顾了布朗运动、fick第一定律；开始学习python爬虫。
+scraping重现书中的代码，根据元素的属性爬取《战争与和平》节选部分中...`;
+            let _URL;
+            switch (dest) {
+                case "qq"       : _URL = qqBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";     break;
+                case "weibo"    : _URL = weiboBase+"url="+hostUrl+"&title="+title+excerpt;                                 break;
+                case "qzone"    : _URL = qzoneBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";  break;
+                case "facebook" : _URL = facebookBase+"u="+hostUrl;                                                        break;
+                case "twitter"  : _URL = twitterBase+"text="+title+excerpt+"&url="+hostUrl;                                break;
+            }
+            window.open(_URL);
+        };
+    </script>
+</div>
+                
+                </div>
+            
             <div class="footer-tag clearfix">
                 <div class="pull-left">
                 <i class="fa fa-tags"></i>
@@ -314,11 +396,35 @@
             
             
             <div class="nav-next clearfix">
-                <a title=" picture_test" href="/2023/03/06/15/34/48/picture-test/">下一篇 &gt;</a>
+                <a title=" picture test" href="/2023/03/06/15/34/48/picture-test/">下一篇 &gt;</a>
             </div>
             
         </nav>
     
+    
+        <div id="v-comments" class="post-comments"></div>
+<script>
+    var load_comm = () => {
+        const init = () => {
+            new Valine({
+                el: '#v-comments',
+                appId: 'gYWXNQxtQjnCNqN12eXIYtpl-gzGzoHsz',
+                appKey: 'kyVbdtKxRyyrjqAcGBai3xDp',
+                visitor: true,
+                enableQQ: false,
+                path: '/2023/03/04/21/52/30/my-first-scraping/'
+            });
+        }
+        if (typeof Valine === 'undefined') {
+            const src = '/vendors/valine@1.4.18/dist/Valine.min.js';
+            $.getScript(src, init);
+        } else {
+            init();
+        }
+    };
+</script>
+<noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="https://valine.js.org/">comments powered by Valine.</a></noscript>
+
     
 </article>
 
@@ -401,7 +507,7 @@
         
           
           
-            <a class="list-group-item" href="/2023/03/06/15/34/48/picture-test/"><i class="fa  fa-book"></i> picture_test</a>
+            <a class="list-group-item" href="/2023/03/06/15/34/48/picture-test/"><i class="fa  fa-book"></i> picture test</a>
             
           
         

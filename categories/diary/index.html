@@ -57,6 +57,8 @@
   <!-- 不得不预先加载的一些JS文件 -->
   <script src="/vendors/jquery@3.6.0/dist/jquery.min.js"></script>
   
+    <script src="/vendors/qrcode_js@1.0.0/qrcode.min.js"></script>
+  
   
   <style>
     
@@ -278,7 +280,7 @@
                 <div class="kratos-post-inner-new">
                     <header class="kratos-entry-header-new">
                             <a class="label-link" href="/categories/diary/">diary</a>
-                        <h2 class="kratos-entry-title-new"><a href="/2023/03/06/15/34/48/picture-test/" itemprop="mainEntityOfPage"><span itemprop="name headline">picture_test</span></a>
+                        <h2 class="kratos-entry-title-new"><a href="/2023/03/06/15/34/48/picture-test/" itemprop="mainEntityOfPage"><span itemprop="name headline">picture test</span></a>
                     </header>
                     <div class="kratos-entry-content-new">
                         <p itemProp="description">
@@ -310,6 +312,11 @@ math插件安装失败（应该是npm的原因），暂时无法解决...
                         </a>
                         
                             <!-- 当前仅支持valine/waline自带的统计功能 -->
+                            
+                                <a id="/2023/03/06/15/34/48/picture-test/" class="leancloud_visitors" data-flag-title="picture test">
+                                    <i class="fa fa-eye"></i>
+                                    <span class="leancloud-visitors-count"> </span> 次阅读
+                                </a>
                             
                         
                         
@@ -364,6 +371,11 @@ scraping重现书中的代码，根据元素的属性爬取《战争与和平》
                         </a>
                         
                             <!-- 当前仅支持valine/waline自带的统计功能 -->
+                            
+                                <a id="/2023/03/04/21/52/30/my-first-scraping/" class="leancloud_visitors" data-flag-title="my first scraping">
+                                    <i class="fa fa-eye"></i>
+                                    <span class="leancloud-visitors-count"> </span> 次阅读
+                                </a>
                             
                         
                         
@@ -421,6 +433,11 @@ scraping重现书中的代码，根据元素的属性爬取《战争与和平》
                         
                             <!-- 当前仅支持valine/waline自带的统计功能 -->
                             
+                                <a id="/2023/03/03/18/07/03/my%20first%20article/" class="leancloud_visitors" data-flag-title="my first article">
+                                    <i class="fa fa-eye"></i>
+                                    <span class="leancloud-visitors-count"> </span> 次阅读
+                                </a>
+                            
                         
                         
                             <!-- 当前仅支持waline自带的统计功能 -->
@@ -441,6 +458,30 @@ scraping重现书中的代码，根据元素的属性爬取《战争与和平》
 
     <div class="hidden">
         <!-- 加载文章阅读对应的统计功能，评论自带的那种 -->
+        
+            <div id="v-comments" class="post-comments"></div>
+<script>
+    var load_comm = () => {
+        const init = () => {
+            new Valine({
+                el: '#v-comments',
+                appId: 'gYWXNQxtQjnCNqN12eXIYtpl-gzGzoHsz',
+                appKey: 'kyVbdtKxRyyrjqAcGBai3xDp',
+                visitor: true,
+                enableQQ: false,
+                path: '/categories/diary/index.html'
+            });
+        }
+        if (typeof Valine === 'undefined') {
+            const src = '/vendors/valine@1.4.18/dist/Valine.min.js';
+            $.getScript(src, init);
+        } else {
+            init();
+        }
+    };
+</script>
+<noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="https://valine.js.org/">comments powered by Valine.</a></noscript>
+
         
     </div>
 
@@ -525,7 +566,7 @@ scraping重现书中的代码，根据元素的属性爬取《战争与和平》
         
           
           
-            <a class="list-group-item" href="/2023/03/06/15/34/48/picture-test/"><i class="fa  fa-book"></i> picture_test</a>
+            <a class="list-group-item" href="/2023/03/06/15/34/48/picture-test/"><i class="fa  fa-book"></i> picture test</a>
             
           
         
