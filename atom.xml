@@ -6,7 +6,7 @@
   <link href="https://liubaichen.github.io/atom.xml" rel="self"/>
   
   <link href="https://liubaichen.github.io/"/>
-  <updated>2023-03-08T08:39:07.062Z</updated>
+  <updated>2023-03-10T14:19:57.011Z</updated>
   <id>https://liubaichen.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>regular expression</title>
+    <link href="https://liubaichen.github.io/2023/03/10/22/04/51/regular-expression/"/>
+    <id>https://liubaichen.github.io/2023/03/10/22/04/51/regular-expression/</id>
+    <published>2023-03-10T14:04:51.000Z</published>
+    <updated>2023-03-10T14:19:57.011Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><ul><li>about regex</li></ul><p>main point</p><ol><li>if <em>(.*?)</em> lies in the last of regex, you will get nothing!!!</li><li>remember compile regex with optional modifiers such as <em>re.M</em> firstly or directly write regex when you use it just like <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    regex = re.compile(regex,optional modifier)</span><br><span class="line">    content_1 = regex.findall(str)</span><br><span class="line">    --------------------------------------------------- </span><br><span class="line">    content_2 = re.findall(regex,str,optional modifier)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li></ol>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla</summary>
+      
+    
+    
+    
+    
+    <category term="python" scheme="https://liubaichen.github.io/tags/python/"/>
+    
+    <category term="regular expression" scheme="https://liubaichen.github.io/tags/regular-expression/"/>
+    
+  </entry>
   
   <entry>
     <title>《一个大国的崛起与崩溃》读书笔记-1</title>
@@ -43,9 +67,9 @@
     <link href="https://liubaichen.github.io/2023/03/08/15/56/07/beautifulsoup-use/"/>
     <id>https://liubaichen.github.io/2023/03/08/15/56/07/beautifulsoup-use/</id>
     <published>2023-03-08T07:56:07.000Z</published>
-    <updated>2023-03-08T08:00:51.466Z</updated>
+    <updated>2023-03-08T13:21:35.831Z</updated>
     
-    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>今日工作：</p><ol><li>beautifulsoup学习，成功爬取了博客主页的文章title、abstract和对应文章的主体内容（终于有了一点小小的成就感）</li><li>开始把以前写的draft发到网站上</li></ol>]]></content>
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>今日工作：</p><ol><li>beautifulsoup学习，成功爬取了博客主页的文章title、abstract和对应文章的主体内容（终于有了一点小小的成就感）</li><li>开始把以前写的draft发到网站上</li></ol><hr><p>今天晚上开始学习requests的时候发生了一个重大错误：我把py文件命名成了requests！！！<br>然后就开始疯狂报错…<br>最开始我认为是刚刚pip install，所以重启了vscode。然后又尝试了换一个文件等等，最后突然意识到好像命名有问题…</p>]]></content>
     
     
       
