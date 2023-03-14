@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <link rel="icon" href="/images/123.jpg">
   
-  <title>档案馆: 2023 | Welcome to kotobanoniwa</title>
+  <title>selenium | Welcome to kotobanoniwa</title>
   <meta name="author" content="Liu baichen" />
   <meta http-equiv="Cache-Control" content="no-transform" />
   <meta http-equiv="Cache-Control" content="no-siteapp" />
@@ -14,17 +14,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <meta name="format-detection" content="telphone=no, email=no" />
   
-    <meta name="keywords" content="" />
+    <meta name="keywords" content="python, selenium" />
   
-  <meta name="description" content="摸鱼中...">
-<meta property="og:type" content="website">
-<meta property="og:title" content="档案馆: 2023">
-<meta property="og:url" content="https://liubaichen.github.io/archives/2023/index.html">
+  <meta name="description" content="关于selenium今天学习selenium遇到的几个挑战：  vscode时不时的出现bug，比如webdriver的某些参数硬是报错 把新打开的网页和iframe误认为是一回事，然后就用handle对着iframe检查了好几遍（iframe真的好难操作） 对于move和click的区别还是没搞懂，感觉有些tag悬停就可以了，但不知道为什么就是不行，明天再看看">
+<meta property="og:type" content="article">
+<meta property="og:title" content="selenium">
+<meta property="og:url" content="https://liubaichen.github.io/2023/03/14/23/43/20/selenium/index.html">
 <meta property="og:site_name" content="Welcome to kotobanoniwa">
-<meta property="og:description" content="摸鱼中...">
+<meta property="og:description" content="关于selenium今天学习selenium遇到的几个挑战：  vscode时不时的出现bug，比如webdriver的某些参数硬是报错 把新打开的网页和iframe误认为是一回事，然后就用handle对着iframe检查了好几遍（iframe真的好难操作） 对于move和click的区别还是没搞懂，感觉有些tag悬停就可以了，但不知道为什么就是不行，明天再看看">
 <meta property="og:locale">
 <meta property="og:image" content="https://liubaichen.github.io/images/123.jpg">
+<meta property="article:published_time" content="2023-03-14T15:43:20.000Z">
+<meta property="article:modified_time" content="2023-03-14T15:50:15.038Z">
 <meta property="article:author" content="Liu baichen">
+<meta property="article:tag" content="python">
+<meta property="article:tag" content="selenium">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://liubaichen.github.io/images/123.jpg">
   <link rel="alternate" href="atom.xml" type="application/atom+xml">
@@ -236,231 +240,181 @@
 
         
 
+            <article itemscope itemtype="https://schema.org/Article">
+    
+    <link itemprop="mainEntityOfPage" href="https://liubaichen.github.io/2023/03/14/23/43/20/selenium/">
+    <div class="kratos-hentry kratos-post-inner clearfix">
+        <header class="kratos-entry-header">
             
-<style>
-  .post-meta time{color:#00a7e0}
-  @media (max-width:767px){.posts-collapse{margin:0 20px}
-  .posts-collapse .post-meta,
-  .posts-collapse .post-title{display:block;width:auto;text-align:left}}
-  .posts-collapse{position:relative}
-  .posts-collapse::after{content:" ";position:absolute;top:20px;left:0;margin-left:-2px;width:4px;height:calc(100% - 35px);background:#f5f5f5;z-index:-1}
-  @media (max-width:991px){.posts-collapse{margin:0 20px}}
-  .posts-collapse .collection-title{position:relative}
-  .posts-collapse .collection-title h1,
-  .posts-collapse .collection-title h2{margin-left:20px}
-  .posts-collapse .collection-title small{color:#bbb;margin-left:5px}
-  .posts-collapse .collection-title::before{content:" ";position:absolute;left:0;top:50%;margin-left:-4px;margin-top:-4px;width:8px;height:8px;background:#bbb;border-radius:50%}
-  .posts-collapse .post-header{position:relative;transition-duration:.2s;transition-timing-function:ease-in-out;transition-delay:0s;transition-property:border}
-  .posts-collapse .post-header::before{content:" ";position:absolute;left:0;top:12px;width:6px;height:6px;margin-left:-4px;background:#bbb;border-radius:50%;border:1px solid #fff;transition: all .3s ease-in-out}
-  .posts-collapse .post-header:hover{border-bottom-color:#666}
-  .posts-collapse .post-header:hover::before{background:#222}
-  .posts-collapse .post-meta{position:absolute;font-size:12px;left:20px;top:5px}
-  .posts-collapse .post-comments-count{display:none}
-  .posts-collapse .post-title{margin-left:70px;font-size:16px;font-weight:400;line-height:inherit}
-  .posts-collapse .post-title::after{margin-left:3px;opacity:.6}
-  .posts-collapse .post-title a{color:#666;border-bottom:none}
-</style>
-
-  <article>
-      <div class="kratos-hentry kratos-post-inner clearfix">
-          <div class="kratos-post-content">
-            <h2 class="title-h2 text-center">文章归档</h2>
-            <div id="archives">
-              <div class="post-block archive post" style="margin-left: 2em;">
-                <h3 class="archive-page-counter">当前共有 8 篇文章 (゜-゜)つロ 干杯~</h3>
-                <div class="posts-collapse">
-                  
-                  
+                <h1 class="kratos-entry-title text-center" itemprop="name headline">selenium</h1>
+            
+            
+            <ul class="kratos-post-meta text-center">
+                <li><time datetime="2023-03-14T15:43:20.000Z" itemprop="datePublished"><i class="fa fa-calendar"></i> 2023-03-14</time></li>
+                <li itemprop="author" itemscope itemtype="https://schema.org/Person">
+                    <i class="fa fa-user"></i> 作者 <span itemprop="name">Liu baichen</span>
+                </li>
+                <li>
+                    <i class="fa fa-edit"></i> 
                     
                     
-                      <!-- 没遇到Title的会被自动忽略年份，即使并不一致 -->
-                      
-                      <div class="collection-title">
-                        <a href="/archives/2023/"><h2 class="archive-year">2023</h2></a>
-                      </div>
+                        184
                     
-                    
-                      <article class="post" itemscope itemtype="https://schema.org/Article">
-                        <header class="post-header">
-                          <h3 class="post-title">
-                            
-                                <a class="post-title-link" href="/2023/03/14/23/43/20/selenium/" itemprop="mainEntityOfPage">
-                                  <span itemprop="name headline">selenium</span>
-                                </a>
-                            
-                          </h3>
-                          <div class="post-meta">
-                            <time class="post-time" itemprop="datePublished"
-                                  datetime="2023-03-14T15:43:20.000Z">
-                              03-14
-                            </time>
-                          </div>
-                        </header>
-                      </article>
-                    
-                  
-                    
-                    
-                    
-                      <article class="post" itemscope itemtype="https://schema.org/Article">
-                        <header class="post-header">
-                          <h3 class="post-title">
-                            
-                                <a class="post-title-link" href="/2023/03/11/20/25/08/requests/" itemprop="mainEntityOfPage">
-                                  <span itemprop="name headline">requests</span>
-                                </a>
-                            
-                          </h3>
-                          <div class="post-meta">
-                            <time class="post-time" itemprop="datePublished"
-                                  datetime="2023-03-11T12:25:08.000Z">
-                              03-11
-                            </time>
-                          </div>
-                        </header>
-                      </article>
-                    
-                  
-                    
-                    
-                    
-                      <article class="post" itemscope itemtype="https://schema.org/Article">
-                        <header class="post-header">
-                          <h3 class="post-title">
-                            
-                                <a class="post-title-link" href="/2023/03/10/22/04/51/regular-expression/" itemprop="mainEntityOfPage">
-                                  <span itemprop="name headline">regular expression</span>
-                                </a>
-                            
-                          </h3>
-                          <div class="post-meta">
-                            <time class="post-time" itemprop="datePublished"
-                                  datetime="2023-03-10T14:04:51.000Z">
-                              03-10
-                            </time>
-                          </div>
-                        </header>
-                      </article>
-                    
-                  
-                    
-                    
-                    
-                      <article class="post" itemscope itemtype="https://schema.org/Article">
-                        <header class="post-header">
-                          <h3 class="post-title">
-                            
-                                <a class="post-title-link" href="/2023/03/08/16/03/46/soviet-history-01/" itemprop="mainEntityOfPage">
-                                  <span itemprop="name headline">《一个大国的崛起与崩溃》读书笔记-1</span>
-                                </a>
-                            
-                          </h3>
-                          <div class="post-meta">
-                            <time class="post-time" itemprop="datePublished"
-                                  datetime="2023-03-08T08:03:46.000Z">
-                              03-08
-                            </time>
-                          </div>
-                        </header>
-                      </article>
-                    
-                  
-                    
-                    
-                    
-                      <article class="post" itemscope itemtype="https://schema.org/Article">
-                        <header class="post-header">
-                          <h3 class="post-title">
-                            
-                                <a class="post-title-link" href="/2023/03/08/15/56/07/beautifulsoup-use/" itemprop="mainEntityOfPage">
-                                  <span itemprop="name headline">beautifulsoup use</span>
-                                </a>
-                            
-                          </h3>
-                          <div class="post-meta">
-                            <time class="post-time" itemprop="datePublished"
-                                  datetime="2023-03-08T07:56:07.000Z">
-                              03-08
-                            </time>
-                          </div>
-                        </header>
-                      </article>
-                    
-                  
-                    
-                    
-                    
-                      <article class="post" itemscope itemtype="https://schema.org/Article">
-                        <header class="post-header">
-                          <h3 class="post-title">
-                            
-                                <a class="post-title-link" href="/2023/03/06/15/34/48/picture-test/" itemprop="mainEntityOfPage">
-                                  <span itemprop="name headline">picture test</span>
-                                </a>
-                            
-                          </h3>
-                          <div class="post-meta">
-                            <time class="post-time" itemprop="datePublished"
-                                  datetime="2023-03-06T07:34:48.000Z">
-                              03-06
-                            </time>
-                          </div>
-                        </header>
-                      </article>
-                    
-                  
-                    
-                    
-                    
-                      <article class="post" itemscope itemtype="https://schema.org/Article">
-                        <header class="post-header">
-                          <h3 class="post-title">
-                            
-                                <a class="post-title-link" href="/2023/03/04/21/52/30/my-first-scraping/" itemprop="mainEntityOfPage">
-                                  <span itemprop="name headline">my first scraping</span>
-                                </a>
-                            
-                          </h3>
-                          <div class="post-meta">
-                            <time class="post-time" itemprop="datePublished"
-                                  datetime="2023-03-04T13:52:30.000Z">
-                              03-04
-                            </time>
-                          </div>
-                        </header>
-                      </article>
-                    
-                  
-                    
-                    
-                    
-                      <article class="post" itemscope itemtype="https://schema.org/Article">
-                        <header class="post-header">
-                          <h3 class="post-title">
-                            
-                                <a class="post-title-link" href="/2023/03/03/18/07/03/my%20first%20article/" itemprop="mainEntityOfPage">
-                                  <span itemprop="name headline">my first article</span>
-                                </a>
-                            
-                          </h3>
-                          <div class="post-meta">
-                            <time class="post-time" itemprop="datePublished"
-                                  datetime="2023-03-03T10:07:03.000Z">
-                              03-03
-                            </time>
-                          </div>
-                        </header>
-                      </article>
-                    
-                  
-                </div>
-              </div>
+                    字
+                </li>
+                
+                    <li id="/2023/03/14/23/43/20/selenium/" class="leancloud_visitors" data-flag-title="selenium">
+                        <i class="fa fa-eye"></i>
+                        <span class="leancloud-visitors-count"> </span> 次阅读
+                    </li>
+                
+            </ul>
+        </header>
+        <div class="kratos-post-content">
+            
+            <div id="expire-alert" class="alert alert-warning hidden" role="alert">
+                <div class="icon"><i class="fa fa-warning"></i></div>
+                <div class="text"><p>本文最后编辑于 <time datetime="1678809015038"></time> 前，其中的内容可能需要更新。</p></div>
             </div>
+            
+            
+            
+            <hr />
+            <div itemprop="articleBody"><h1 id="关于selenium"><a href="#关于selenium" class="headerlink" title="关于selenium"></a>关于selenium</h1><p>今天学习selenium遇到的几个挑战：</p>
+<ol>
+<li>vscode时不时的出现bug，比如webdriver的某些参数硬是报错</li>
+<li>把新打开的网页和iframe误认为是一回事，然后就用handle对着iframe检查了好几遍（iframe真的好难操作）</li>
+<li>对于move和click的区别还是没搞懂，感觉有些tag悬停就可以了，但不知道为什么就是不行，明天再看看</li>
+</ol>
+</div>
         </div>
-      </div>
-      
-  </article>
+        
+        <footer class="kratos-entry-footer clearfix">
+            
+                <div class="post-like-donate text-center clearfix" id="post-like-donate">
+                
+                
+                    <a class="share" href="javascript:;"><i class="fa fa-share-alt"></i> 分享</a>
+                    <div class="share-wrap" style="display: none;">
+    <div class="share-group">
+        <a href="javascript:;" class="share-plain qq" onclick="share('qq');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-qq"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain qzone" onclick="share('qzone');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-star"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain weixin pop style-plain" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-weixin"></i>
+            </div>
+            <div class="share-int">
+                <div class="qrcode" id="wechat-qr"></div>
+                <p>打开微信“扫一扫”，打开网页后点击屏幕右上角分享按钮</p>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain weibo" onclick="share('weibo');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-weibo"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain facebook style-plain" onclick="share('facebook');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-facebook"></i>
+            </div>
+        </a>
+        <a href="javascript:;" class="share-plain twitter style-plain" onclick="share('twitter');" rel="nofollow">
+            <div class="icon-wrap">
+                <i class="fa fa-twitter"></i>
+            </div>
+        </a>
+    </div>
+    <script type="text/javascript">
+        $(()=>{
+            new QRCode("wechat-qr", {
+                text: "https://liubaichen.github.io/2023/03/14/23/43/20/selenium/",
+                width: 150,
+                height: 150,
+                correctLevel : QRCode.CorrectLevel.H
+            });
+        });
+        function share(dest) {
+            const qqBase        = "https://connect.qq.com/widget/shareqq/index.html?";
+            const weiboBase     = "https://service.weibo.com/share/share.php?";
+            const qzoneBase     = "https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?";
+            const facebookBase  = "https://www.facebook.com/sharer/sharer.php?";
+            const twitterBase   = "https://twitter.com/intent/tweet?";
+            const hostUrl       = "https://liubaichen.github.io/2023/03/14/23/43/20/selenium/";
+            const title         = "「selenium」";
+            const excerpt       = `关于selenium今天学习selenium遇到的几个挑战：
 
+vscode时不时的出现bug，比如webdriver的某些参数硬是报错
+把新打开的网页和iframe误认为是一回事，然后就用handle对着iframe检查了好几遍（i...`;
+            let _URL;
+            switch (dest) {
+                case "qq"       : _URL = qqBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";     break;
+                case "weibo"    : _URL = weiboBase+"url="+hostUrl+"&title="+title+excerpt;                                 break;
+                case "qzone"    : _URL = qzoneBase+"url="+hostUrl+"&title="+title+"&desc=&summary="+excerpt+"&site=cxpy";  break;
+                case "facebook" : _URL = facebookBase+"u="+hostUrl;                                                        break;
+                case "twitter"  : _URL = twitterBase+"text="+title+excerpt+"&url="+hostUrl;                                break;
+            }
+            window.open(_URL);
+        };
+    </script>
+</div>
+                
+                </div>
+            
+            <div class="footer-tag clearfix">
+                <div class="pull-left">
+                <i class="fa fa-tags"></i>
+                    <a class="tag-none-link" href="/tags/python/" rel="tag">python</a>, <a class="tag-none-link" href="/tags/selenium/" rel="tag">selenium</a>
+                </div>
+                <div class="pull-date">
+                    <time datetime="2023-03-14T15:50:15.038Z" itemprop="dateModified">最后编辑：2023-03-14</time>
+                </div>
+            </div>
+        </footer>
+    </div>
+    
+        <nav class="navigation post-navigation clearfix" role="navigation">
+            
+            <div class="nav-previous clearfix">
+                <a title=" requests" href="/2023/03/11/20/25/08/requests/">&lt; 上一篇</a>
+            </div>
+            
+            
+        </nav>
+    
+    
+        <div id="v-comments" class="post-comments"></div>
+<script>
+    var load_comm = () => {
+        const init = () => {
+            new Valine({
+                el: '#v-comments',
+                appId: 'gYWXNQxtQjnCNqN12eXIYtpl-gzGzoHsz',
+                appKey: 'kyVbdtKxRyyrjqAcGBai3xDp',
+                visitor: true,
+                enableQQ: false,
+                path: '/2023/03/14/23/43/20/selenium/'
+            });
+        }
+        if (typeof Valine === 'undefined') {
+            const src = '/vendors/valine@1.4.18/dist/Valine.min.js';
+            $.getScript(src, init);
+        } else {
+            init();
+        }
+    };
+</script>
+<noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="https://valine.js.org/">comments powered by Valine.</a></noscript>
+
+    
+</article>
 
         
 
@@ -473,8 +427,6 @@
 
 <section id="kratos-widget-area" class="col-md-4 hidden-xs hidden-sm">
     <!-- 文章和页面根据splitter来分割，没有的话就从头开始设置为sticky -->
-    
-        <div class="sticky-area">
     
     
                 <aside id="krw-about" class="widget widget-kratos-about clearfix">
@@ -515,6 +467,8 @@
     </div>
 </aside>
             
+                    <div class="sticky-area">
+                
                 
   <aside id="krw-categories" class="widget widget-kratos-categories clearfix">
     <h4 class="widget-title"><i class="fa fa-folder"></i>分类目录</h4>

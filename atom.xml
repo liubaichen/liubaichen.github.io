@@ -6,7 +6,7 @@
   <link href="https://liubaichen.github.io/atom.xml" rel="self"/>
   
   <link href="https://liubaichen.github.io/"/>
-  <updated>2023-03-11T14:02:08.038Z</updated>
+  <updated>2023-03-14T15:50:15.038Z</updated>
   <id>https://liubaichen.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>selenium</title>
+    <link href="https://liubaichen.github.io/2023/03/14/23/43/20/selenium/"/>
+    <id>https://liubaichen.github.io/2023/03/14/23/43/20/selenium/</id>
+    <published>2023-03-14T15:43:20.000Z</published>
+    <updated>2023-03-14T15:50:15.038Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="关于selenium"><a href="#关于selenium" class="headerlink" title="关于selenium"></a>关于selenium</h1><p>今天学习selenium遇到的几个挑战：</p><ol><li>vscode时不时的出现bug，比如webdriver的某些参数硬是报错</li><li>把新打开的网页和iframe误认为是一回事，然后就用handle对着iframe检查了好几遍（iframe真的好难操作）</li><li>对于move和click的区别还是没搞懂，感觉有些tag悬停就可以了，但不知道为什么就是不行，明天再看看</li></ol>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot; cla</summary>
+      
+    
+    
+    
+    
+    <category term="python" scheme="https://liubaichen.github.io/tags/python/"/>
+    
+    <category term="selenium" scheme="https://liubaichen.github.io/tags/selenium/"/>
+    
+  </entry>
   
   <entry>
     <title>requests</title>
