@@ -241,18 +241,7 @@
       <link href="/about/index.html"/>
       <url>/about/index.html</url>
       
-        <content type="html"><![CDATA[<h1>about me</h1><p>there is almost everything about me</p>]]></content>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title></title>
-      <link href="/categories/index.html"/>
-      <url>/categories/index.html</url>
-      
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<h1>about me</h1><ul><li>海河中下游某大学就读，天坑专业大四学生</li><li>兴趣丰富，但一事无成</li><li>二次元爱好者，魔圆忠实粉丝</li><li>原三次元爱好者，主推乃木坂46</li><li>历史爱好者——苏联史和中华人民共和国国史</li><li>python ing</li></ul>]]></content>
       
     </entry>
     
@@ -262,6 +251,17 @@
       <title></title>
       <link href="/tags/index.html"/>
       <url>/tags/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
+      <link href="/categories/index.html"/>
+      <url>/categories/index.html</url>
       
         <content type="html"><![CDATA[]]></content>
       
