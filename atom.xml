@@ -6,7 +6,7 @@
   <link href="https://liubaichen.github.io/atom.xml" rel="self"/>
   
   <link href="https://liubaichen.github.io/"/>
-  <updated>2023-03-15T13:41:27.077Z</updated>
+  <updated>2023-03-17T11:45:53.646Z</updated>
   <id>https://liubaichen.github.io/</id>
   
   <author>
@@ -15,6 +15,21 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>B-V方程</title>
+    <link href="https://liubaichen.github.io/2023/03/17/19/45/23/B-V-equation/"/>
+    <id>https://liubaichen.github.io/2023/03/17/19/45/23/B-V-equation/</id>
+    <published>2023-03-17T11:45:23.000Z</published>
+    <updated>2023-03-17T11:45:53.646Z</updated>
+    
+    
+    
+    
+    
+    <category term="电化学" scheme="https://liubaichen.github.io/tags/%E7%94%B5%E5%8C%96%E5%AD%A6/"/>
+    
+  </entry>
   
   <entry>
     <title>electrochemistry</title>
