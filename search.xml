@@ -347,22 +347,22 @@
     
     
     <entry>
-      <title></title>
-      <link href="/categories/index.html"/>
-      <url>/categories/index.html</url>
+      <title>about</title>
+      <link href="/about/index.html"/>
+      <url>/about/index.html</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<h1>about me</h1><ul><li>海河中下游某大学天坑专业就读</li><li>兴趣丰富，但一事无成</li><li>二次元爱好者，魔圆忠实粉丝（看配图就知道了嘛）</li><li>原三次元爱好者，主推乃木坂46的日奈子ちゃん</li><li>喜欢苏联史和中华人民共和国国史</li><li>python ing</li></ul><h1>配图说明</h1><ul><li>网页图标（favicon）：<a href="https://zh.moegirl.org.cn/%E9%B9%BF%E7%9B%AE%E5%9C%86">鹿目まどか</a>，来自<a href="https://zh.moegirl.org.cn/%E9%AD%94%E6%B3%95%E5%B0%91%E5%A5%B3%E5%B0%8F%E5%9C%86">魔法少女まどか☆マギア</a></li><li>网站logo（主页面左上角）：<a href="https://zh.moegirl.org.cn/%E5%A4%A9%E7%8E%8B%E5%AF%BA%E7%92%83%E5%A5%88">天王寺璃奈</a>，来自<a href="https://nijigaku.club/">虹ヶ咲スクールアイドル同好会</a></li><li>个人头像（avatar）：<a href="https://zh.moegirl.org.cn/%E5%87%A4%E6%BB%A1">鳳ミチル</a>，来自<a href="https://zh.moegirl.org.cn/%E5%B0%91%E5%A5%B3%E6%AD%8C%E5%89%A7_Revue_Starlight_-Re_LIVE-">少女☆歌剧 Revue Starlight</a></li></ul><blockquote><p>新歌 <strong>命尽きても尽き果てず</strong> 吹爆！</p></blockquote><ul><li>archives页首：クラリス(ClariS)</li><li>文章封面：<a href="https://zh.moegirl.org.cn/%E9%AD%94%E6%B3%95%E5%B0%91%E5%A5%B3%E5%B0%8F%E5%9C%86">魔法少女まどか☆マギア</a>的剧照、同人图等</li></ul><h1>网站概览</h1><ul><li>框架：hexo</li><li>服务器：github</li><li>域名：dynadot</li><li>主题：butterfly</li></ul><h1>域名说明</h1><p>kotobanoniwa，是日语<strong>言葉の庭</strong>的罗马音，译为 <strong>语言的庭院</strong>。</p>]]></content>
       
     </entry>
     
     
     
     <entry>
-      <title>about</title>
-      <link href="/about/index.html"/>
-      <url>/about/index.html</url>
+      <title></title>
+      <link href="/categories/index.html"/>
+      <url>/categories/index.html</url>
       
-        <content type="html"><![CDATA[<h1>about me</h1><ul><li>海河中下游某大学天坑专业就读</li><li>兴趣丰富，但一事无成</li><li>二次元爱好者，魔圆忠实粉丝（看配图就知道了嘛）</li><li>原三次元爱好者，主推乃木坂46的日奈子ちゃん</li><li>喜欢苏联史和中华人民共和国国史</li><li>python ing</li></ul><h1>配图说明</h1><ul><li>网页图标（favicon）：<a href="https://zh.moegirl.org.cn/%E9%B9%BF%E7%9B%AE%E5%9C%86">鹿目まどか</a>，来自<a href="https://zh.moegirl.org.cn/%E9%AD%94%E6%B3%95%E5%B0%91%E5%A5%B3%E5%B0%8F%E5%9C%86">魔法少女まどか☆マギア</a></li><li>网站logo（主页面左上角）：<a href="https://zh.moegirl.org.cn/%E5%A4%A9%E7%8E%8B%E5%AF%BA%E7%92%83%E5%A5%88">天王寺璃奈</a>，来自<a href="https://nijigaku.club/">虹ヶ咲スクールアイドル同好会</a></li><li>个人头像（avatar）：<a href="https://zh.moegirl.org.cn/%E5%87%A4%E6%BB%A1">鳳ミチル</a>，来自<a href="https://zh.moegirl.org.cn/%E5%B0%91%E5%A5%B3%E6%AD%8C%E5%89%A7_Revue_Starlight_-Re_LIVE-">少女☆歌剧 Revue Starlight</a></li></ul><blockquote><p>新歌 <strong>命尽きても尽き果てず</strong> 吹爆！</p></blockquote><ul><li>archives页首：クラリス(ClariS)</li><li>文章封面：<a href="https://zh.moegirl.org.cn/%E9%AD%94%E6%B3%95%E5%B0%91%E5%A5%B3%E5%B0%8F%E5%9C%86">魔法少女まどか☆マギア</a>的剧照、同人图等</li></ul><h1>网站概览</h1><ul><li>框架：hexo</li><li>服务器：github</li><li>域名：dynadot</li><li>主题：butterfly</li></ul><h1>域名说明</h1><p>kotobanoniwa，是日语<strong>言葉の庭</strong>的罗马音，译为 <strong>语言的庭院</strong>。</p>]]></content>
+        <content type="html"><![CDATA[]]></content>
       
     </entry>
     
