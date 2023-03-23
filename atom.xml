@@ -6,7 +6,7 @@
   <link href="https://liubaichen.github.io/atom.xml" rel="self"/>
   
   <link href="https://liubaichen.github.io/"/>
-  <updated>2023-03-23T11:22:38.600Z</updated>
+  <updated>2023-03-23T11:32:39.453Z</updated>
   <id>https://liubaichen.github.io/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="https://liubaichen.github.io/2023/03/23/18/58/32/ai-draw/"/>
     <id>https://liubaichen.github.io/2023/03/23/18/58/32/ai-draw/</id>
     <published>2023-03-23T10:58:32.000Z</published>
-    <updated>2023-03-23T11:22:38.600Z</updated>
+    <updated>2023-03-23T11:32:39.453Z</updated>
     
-    <content type="html"><![CDATA[<p>今天按照b站up主秋大的贴心教程搞定了webui和lora的安装，并且成功在google的colab上训练了後藤ひとり的lora模型（因为显存可能不太够，还没在本地训练）</p><p>晚上在本地用中午训练的模型试了一下文生图，tag是<em>lighting, detailed sky, garden, flower meadow, 1girl, pink hair, guitar, blue eyes, wa maid, morning, outdoors, street</em>（大部分是网上抄的），共生成40张。</p><p>竟然有一张还 <s>不错</s> 的!</p><p><a href="https://picgo-liubaichen.oss-cn-beijing.aliyuncs.com/ai_draw_first.png">後藤ひとり</a></p>]]></content>
+    <content type="html"><![CDATA[<p>今天按照b站up主秋大的贴心教程搞定了webui和lora的安装，并且成功在google的colab上训练了後藤ひとり的lora模型（因为显存可能不太够，还没在本地训练）</p><p>晚上在本地用中午训练的模型试了一下文生图，tag是<em>lighting, detailed sky, garden, flower meadow, 1girl, pink hair, guitar, blue eyes, wa maid, morning, outdoors, street</em>（大部分是网上抄的），共生成40张。</p><p>竟然有一张还 <s>不错</s> 的!</p><p><img src="https://picgo-liubaichen.oss-cn-beijing.aliyuncs.com/ai_draw_first.png" alt=""></p>]]></content>
     
     
       
