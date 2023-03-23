@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>ai_draw</title>
+      <link href="/2023/03/23/18/58/32/ai-draw/"/>
+      <url>/2023/03/23/18/58/32/ai-draw/</url>
+      
+        <content type="html"><![CDATA[<p>今天按照b站up主秋大的贴心教程搞定了webui和lora的安装，并且成功在google的colab上训练了後藤ひとり的lora模型（因为显存可能不太够，还没在本地训练）</p><p>晚上在本地用中午训练的模型试了一下文生图，tag是<em>lighting, detailed sky, garden, flower meadow, 1girl, pink hair, guitar, blue eyes, wa maid, morning, outdoors, street</em>（大部分是网上抄的），共生成40张。</p><p>竟然有一张还 <s>不错</s> 的!</p><p><a href="https://picgo-liubaichen.oss-cn-beijing.aliyuncs.com/ai_draw_first.png">後藤ひとり</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> diary </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> AI绘画 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>悲剧是这样诞生的——“卡廷事件”与战前苏波关系</title>
       <link href="/2023/03/22/15/03/29/Katyn-massacre/"/>
       <url>/2023/03/22/15/03/29/Katyn-massacre/</url>
