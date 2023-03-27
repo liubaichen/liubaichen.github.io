@@ -6,7 +6,7 @@
   <link href="https://liubaichen.github.io/atom.xml" rel="self"/>
   
   <link href="https://liubaichen.github.io/"/>
-  <updated>2023-03-27T03:19:13.348Z</updated>
+  <updated>2023-03-27T06:19:41.911Z</updated>
   <id>https://liubaichen.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>N3第一天</title>
+    <link href="https://liubaichen.github.io/2023/03/27/14/18/56/N3-1/"/>
+    <id>https://liubaichen.github.io/2023/03/27/14/18/56/N3-1/</id>
+    <published>2023-03-27T06:18:56.000Z</published>
+    <updated>2023-03-27T06:19:41.911Z</updated>
+    
+    <content type="html"><![CDATA[<h1>あいだ</h1>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1&gt;あいだ&lt;/h1&gt;
+</summary>
+      
+    
+    
+    
+    <category term="日语" scheme="https://liubaichen.github.io/categories/%E6%97%A5%E8%AF%AD/"/>
+    
+    
+    <category term="文法" scheme="https://liubaichen.github.io/tags/%E6%96%87%E6%B3%95/"/>
+    
+  </entry>
   
   <entry>
     <title>多进程使用——以爬取豆瓣榜单为例</title>
