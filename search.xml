@@ -4,6 +4,56 @@
   
     
     <entry>
+      <title>切片复习</title>
+      <link href="/2023/03/31/09/44/39/slice/"/>
+      <url>/2023/03/31/09/44/39/slice/</url>
+      
+        <content type="html"><![CDATA[<p>学习numpy和神经网络的时候深感对切片的理解不到位，所以抽时间深入了解切片</p><p>切片的构成语法如下</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a[start:stop:step]</span><br><span class="line">#! :step是可选参数</span><br></pre></td></tr></table></figure><blockquote><p>如果<br>如果只是上面这样就还好理解，问题出在三个参数经常出现缺省，如</p></blockquote><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = list(range(5))</span><br><span class="line">a[::2]      #[0, 2, 4]</span><br><span class="line">a[:2]       #[0, 1]</span><br></pre></td></tr></table></figure><p>在参数缺省的情况下，python默认取最大区间，如a[::2]即为全区间，a[:2]的index为0、1。另外需要注意的是，如果start和stop超出范围（如start过小或start大于stop等），python并不会报错，而是返回有效值或空值</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a[2:1]  #[]</span><br><span class="line">a[-10:4]    #[0, 1, 2, 3]</span><br></pre></td></tr></table></figure><p>二维数组的切片需要使用两个切片，并用逗号隔开</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">a = np.arange(6).reshape(2,-1)</span><br><span class="line">a[:,::2]</span><br><span class="line"></span><br><span class="line">#</span><br><span class="line">array([[0, 2],</span><br><span class="line">       [3, 5]])</span><br></pre></td></tr></table></figure><p>二维数组中行优先于列，因此只有一个切片默认是对行</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a = np.arange(6).reshape(2,-1)</span><br><span class="line">a[1:]</span><br><span class="line"></span><br><span class="line">#</span><br><span class="line">array([[3, 4, 5]])</span><br></pre></td></tr></table></figure><p>numpy中对列的操作会默认转化为行向量</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a = np.arange(6).reshape(2,-1)</span><br><span class="line">a[:,1]</span><br><span class="line"></span><br><span class="line">#</span><br><span class="line">array([1, 4])</span><br></pre></td></tr></table></figure><p>观察发现，上述两个结果的形式不同，第一个结果有两对中括号，第二个结果只有一对。原因是1:的对象是从第二行开始的所有行，numpy认为这是一个二维数组（尽管实际上是一维的）。而:,1表示第二列元素，无论怎么取都只能是一维数组</p><p>numpy中对列的操作会默认转化为行向量，但是也可以通过其他手段获得列向量</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">a = np.arange(5)</span><br><span class="line">a.reshape(-1,1)</span><br><span class="line"></span><br><span class="line">array([[0],</span><br><span class="line">       [1],</span><br><span class="line">       [2],</span><br><span class="line">       [3],</span><br><span class="line">       [4]])</span><br></pre></td></tr></table></figure><p>将reshape的第一参数设置为-1（表示自动计算），第二参数设为1（表示列数为1），即可获得列向量</p><p>切片操作也有类似的用法</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">a = np.arange(25).reshape(5,-1)</span><br><span class="line">a[1:,:1]</span><br><span class="line">#</span><br><span class="line">array([[ 5],</span><br><span class="line">       [10],</span><br><span class="line">       [15],</span><br><span class="line">       [20]])</span><br><span class="line"></span><br><span class="line">a = np.arange(25).reshape(5,-1)</span><br><span class="line">a[1:,0]</span><br><span class="line">#array([ 5, 10, 15, 20])</span><br></pre></td></tr></table></figure><p>上述两段代码都是取第一列部分元素，区别在[1:,:1]会被处理为二维数组，因此可以表示列向量；a[1:,0]被处理为一维数组，只能表示行向量</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> python </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 杂谈 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>国家工业化 &amp; 布哈林与斯大林之争</title>
+      <link href="/2023/03/30/21/20/04/industrialization/"/>
+      <url>/2023/03/30/21/20/04/industrialization/</url>
+      
+        <content type="html"><![CDATA[<p>本篇来自《苏联兴亡史》，记录时间为2022年11月17日</p><p>1930年十六大报告正式将苏联国家工业化称之为“社会主义工业化”。其与资本主义工业化的区别是：</p><ol><li>从何开始——重工业</li><li>速度——高速度</li><li>资金来源——依靠本国积累资金</li></ol><h1>重工业优先的确立</h1><p>斯大林和托洛茨基的争斗也体现在工业发展路径上。托洛茨基主张“世界分工论 ”，即苏联（社会主义国家）与资本主义国家之间相互依赖，以加强对世界资产阶级的斗争。斯大林为了对抗托洛茨基，始终坚持重工业优先原则，并将其上升到了一种“社会主义规律”的浮夸高度上。这就好像是在说，由于资本主义国家都是从轻工业开始，那社会主义国家必须从重工业开始，即是否优先发展重工业成了区分社会主义和资本主义的标志。</p><blockquote><p>事实上，沙俄和德国也都是从重工业开始发展的</p></blockquote><h1>“高速度”</h1><p>1926年6月中央全会，李可夫主张保守经济发展路线，并得到了中央派的支持。而托洛茨基则认为经济恢复后的苏联经济将快速发展，被称为“超工业化”理论。不久后就提出了用最短时间赶超资本主义国家的口号，第聂伯河水电站等大批项目仓促上马，“高速度”已见雏形。不过直到1927年底的十五大还都算是维持较为稳妥的经济路线。随着托李联盟被击溃，特别是1928年布哈林因“右倾机会主义”被批判后，斯大林继承了托洛茨基的“超工业化”理论，提出了一系列“十年赶超五十年甚至一百年的差距”、“用真正的布尔什维克的速度，在最短时间消灭这种落后状况，赶上并超过所有先进的资本主义国家”、“落后就要挨打”等一系列耳熟能详的论调，“高速度”成为社会主义国家最为典型的特征。</p><p>为什么斯大林经济政策倾向的转变如此迅速？难道他真的是“开窍”了？我想不是这样。斯大林并不是托洛茨基那样张扬跋扈的人，后者的思维是始终如一的，即一切事物的发展都以世界革命为中心。斯大林为了对抗托洛茨基，必须提出相反的论调，即使他认同托洛茨基的观点。因此当托洛茨基一被打倒，斯大林就立即着手“高速度”发展策略。</p><h1>“国内殖民地”——工业化资金来源</h1><p>社会主义国家的工业化不同于资本主义国家的工业化，工业建设是由国家有计划有组织地进行的，它与资本主义国家分散地自发地进行工业建设完全不同。苏联工业化的建设资金要由国家统一筹集，资金从哪里来？</p><p>经济学家普列奥布拉任斯基，在1924年（共产主义科学院学报》第8期上发表《社会主义积累的基本规律》一文，提出了“社会主义原始积累”的理论。普列奥布拉任斯基认为，<em>在俄国这样一个生产力水平低下，小生产者占优势的国家里，社会主义工业化的资金不能依靠掠夺殖民地，只能把小生产当作“殖民地”。他说：“向社会主义生产组织过渡的某一国家在经济上愈落后，小资产阶级性即农民性愈严重，该国无产阶级在社会革命时能得到充作自己社会主义积累资金的遗产愈小，这个国家的社会主义积累就愈要被迫依赖于社会主义以前的经济形式的部分剩余产品的转让，靠在他自已的生产基础上来积累的比重就愈小，就是说，这个国家的发展愈不依赖社会主义工业工作者的剩余产品”。由此，他提出，“认为社会主义经济可以不触动小资产阶级包括农民经济资源而自行发展的思想，无疑是反动的小资产阶级的空想。社会主义国家在这里的任务不是从小资产阶级生产者那里拿得比资本主义从他们那里拿得更少的东西，而是拿得更多。 ”除了向小生产者征收高额税金进行积累以外，普列奥布拉任斯基还反对通过正常的市场关系来为工业化积累资金，主张用超经济强制的行政手段来积累资金。如国家利用垄断地位提高工业品价格以及铁路运价，等等。他说：“通过相应的价格政策进行积累，比起向小生产征收直接税和间接税的其他形式更优越，最主要的优越性是征收非常方便，不需要在专门的税收机关上花一个戈比”。他还认为可以通过国家银行的垄断地位，向农民发放高利贷，发行纸币，他说：“当国家既是管理全国的机构，又是极其庞大的经济综合体的主人的时候，发行纸币是社会主义积累的直接渠道”</em></p><p>普列奥布拉任斯基的反对者是曾经的左派、现在的“右派”布哈林。他指出，<em>普列奥布拉任斯基理论上的一个基本错误，在于把农民小生产者看作剥削对象，看作“殖民地”，这就把工农两个基本阶级的关系看作剥削关系，无产阶级成了剥削阶级，而且，据说，完成社会主义变革的国家愈落后，无产阶级的剥削性质就愈明显。布哈林驳斥了这种观点，他认为，在社会主义工业化过程中，确实存在小生产者的剩余价值充当积累资金，存在着一个阶级创造的价值转移到另一个阶级即统治阶级手中的情形，但决不能据此得出结论，称无产阶级为剥削阶级，称工业化时期的工农关系为剥削关系。布哈林说，这决不是因为“剥削”这个名同“很难听”，而是因为这种说法不符合常观实际。从历史上看，剥削关系的存在，通过积累，都会“经常再生产出剥削关系。价值从一个阶级手中转到另一个阶级手中，这就会经常扩大阶级对立”。在社会主义工业化时期，价值从小生产者手中转到无产阶级工业手中表现了什么呢？布哈林回答说：“我们根本不是要去巩固阶级之间的关系，而且要去消灭这些关系。社会主义经济成分及其正在形成的社会主义外围的积累进行得愈快，对立的消灭也就进行得愈快”。布哈林认为，社会主义工业需要小生产者提供积累，但不能对小生产者实行剥夺，不能通过使农民经济破产的办法来排挤农民经济，如果听任原始积累的骑士去同小生产打交道，就会损害工农联盟。如果对农民实行剥夺和“吞没”的方针，就会使农业衰败，使农民收入降低，而农民的市场容量，是直接决定轻工业、部分地是决定其他工业规模的重要因素之一。因此，社会主义工业中的积累必须同农民经济中的积累问题相联系。如果农民需求缩减，就会出现销售危机，社会再生产过程就会减慢，而在小农占优势的国家，社会主义工业的积累在很大程度上是农民经济的“函数”，而采用普列奥布拉任斯基的主张，无异于“杀掉会生金蛋的母鸡&quot;</em></p><blockquote><p>无论怎么评说，社会主义原始积累理论已经通过实践检验了他的必然性（而非正确性）</p></blockquote><h1>布哈林同斯大林的争论及结果</h1><p>布哈林的“国民经济平衡发展”理论核心内容：1、多种经济之间的平衡发展；2、保证农、轻、重恰当的比例关系；3、积累与消费的平衡发展；4、计划与市场的平衡发展。1927年底到1928年春的粮食收购危机成为布哈林和斯大林争论的开端。布哈林认为国家计划领导失败的表现包括：</p><ol><li>农产品价格不合理，谷物收购价过低，技术作物和畜产品偏高；导致农民缩小谷物种植规模，甚至把余粮饲养牲畜</li><li>基础建设投资增加太快、太多，导致供应农村市场的商品减少，破坏城乡平衡</li><li>苏维埃的货币还没有稳定到使农民可以安心地把它作为积累手段的地步。因此农民更倾向于将粮食作为积累手段</li></ol><p>斯大林的看法与布哈林大相径庭：</p><ol><li>工业发展速度太慢，社会主义积累太少，致使农村商品供应不足</li><li>苏联已经成为小农国家，而小农经济是提供商品粮极少的一种经济成分</li><li>富农迅速成长，投机倒把，操纵粮价，破坏粮食征收工作</li></ol><p>故斯大林认为根本出路是迅速实现农业集体化。他认为这样做可以生产最大量的粮食，并且过渡到公共经济。</p><p>布哈林和斯大林的分歧是根本且全方位的：布哈林清醒地认识到苏联的危机表现为“商品荒”，是资本主义经济危机表现形式的颠倒。他认为群众消费的增长是社会经济增长的直接动力，过渡时期的基本路线是矛盾缩小和最后消亡的路线，并坚决反对斯大林的“阶级斗争”理论：社会主义的前进动力是阶级斗争，社会主义建设中的一切成就都是阶级斗争的表现和结果；社会主义越是取得胜利，阶级斗争就越来越尖锐。 在斯大林的强硬政策下，农村出现各种骇人听闻的悲剧都是必然的。在这种形势下，农民普遍流露出：“<strong>多种粮食有什么好处，反正都要没收；要是只种够自己吃的呢，还少交税</strong>” 。</p><blockquote><p>1929年爆发的全球性金融危机的关键原因之一便是民众消费意愿减弱，市场对商品的总需求量减少</p></blockquote><p>1928年4月后，二人的争论从理论走向全会和公开化。最初布哈林在党内占据优势，但是斯大林已经掌握最高权力，“多数派”的意见已经逐渐不起作用。7月全会上，斯大林提出“贡税论”，即农民必须为实现工业化而缴纳“贡税”，得到了大多数人的默许，形势发生逆转。7月全会也成为布哈林从理论上占优势转而走向失败的转折点。斯大林的理论归根到底就是，农民缴纳贡税，工人阶级建设工业化的国家。如果马克思主义是这样的一种理论，或是说共产主义必须要靠这种弱肉强食的方法实现，那我必须在此提出对该理论的质疑：</p><p>马克思主义究竟是在解放人？还是在毁灭人？甚至说他们认为这两者没有什么区别？其终极目标是无产阶级领导一切 ，还是最大程度地实现自我之价值？</p><p>布哈林不愿低头认输。1928年9月30日，他在《真理报》发表《一个经济学家的札记》，猛烈批评“贡税论”：群众迫切需要了解事情的真实情况，不满老掉牙的、死板的空话；斯大林的“贡税论”就是普列奥布拉任斯基的“社会主义原始积累论”。布哈林的坚定支持者、布鲁诺精神的继承者——莫斯科党委书记乌格兰诺夫被斯大林严厉批判与撤职，将斯大林与布哈林的争论推到了最后关头。1929年初联席会议上，布哈林仍被给予最后一次“和解方案”，因为斯大林可能并不希望用解决托洛茨基、季诺维耶夫、加米涅夫的方式解决布哈林。但布哈林不仅拒绝一切委曲求全的方案，还起草了一份批驳斯大林政策的声明，并由李可夫在政治局会议上宣读，直指斯大林用个人决定代替党的集体领导原则。2月9日，斯大林正式在全国开启“反右倾斗争”。</p><p>苏联的反右倾斗争从根本上彻底粉碎了民主的可能性，之后发生的农业集体化、大饥荒、大清洗都是必然结果。集权国家毁灭的直接原因并不是由于理论思想的极端性与不可实现性，而是随着时间的推移，继任的当权者和他的爪牙们甚至连最基本的理论都搞不懂，他们只会重复没有任何意义的废话！即比起坚定的乌托邦式信仰，信仰的崩塌才是导致社会主义道路一直以来行不通的外在原因。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 历史 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 苏联史 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>大迁移——苏联的特殊移民政策及其后果</title>
       <link href="/2023/03/30/21/11/16/exile/"/>
       <url>/2023/03/30/21/11/16/exile/</url>
@@ -88,7 +138,7 @@
       
       <categories>
           
-          <category> -python </category>
+          <category> python </category>
           
       </categories>
       
@@ -229,19 +279,6 @@
     
     
     <entry>
-      <title>test</title>
-      <link href="/2023/03/27/18/28/23/test/"/>
-      <url>/2023/03/27/18/28/23/test/</url>
-      
-        <content type="html"><![CDATA[]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>N3第一天</title>
       <link href="/2023/03/27/14/18/56/N3-1/"/>
       <url>/2023/03/27/14/18/56/N3-1/</url>
@@ -258,7 +295,7 @@
       
         <tags>
             
-            <tag> 文法 </tag>
+            <tag> 日语文法 </tag>
             
         </tags>
       
@@ -308,7 +345,7 @@
       
         <tags>
             
-            <tag> AI绘画 </tag>
+            <tag> 杂谈 </tag>
             
         </tags>
       
@@ -439,7 +476,7 @@
       
       <categories>
           
-          <category> 网站 </category>
+          <category> diary </category>
           
       </categories>
       
@@ -491,7 +528,7 @@
       
       <categories>
           
-          <category> python </category>
+          <category> diary </category>
           
       </categories>
       
@@ -516,7 +553,7 @@
       
       <categories>
           
-          <category> python </category>
+          <category> diary </category>
           
       </categories>
       
@@ -591,7 +628,7 @@
       
       <categories>
           
-          <category> python </category>
+          <category> diary </category>
           
       </categories>
       
@@ -664,7 +701,7 @@
       <link href="/about/index.html"/>
       <url>/about/index.html</url>
       
-        <content type="html"><![CDATA[<h1>about me</h1><ul><li>海河中下游某大学天坑专业就读</li><li>兴趣丰富，但一事无成</li><li>二次元爱好者，魔圆忠实粉丝（看配图就知道了嘛）</li><li>原三次元爱好者，主推乃木坂46的日奈子ちゃん</li><li>喜欢苏联史和中华人民共和国国史</li><li>python ing</li></ul><h1>配图说明</h1><ul><li>网页图标（favicon）：<a href="https://zh.moegirl.org.cn/%E9%B9%BF%E7%9B%AE%E5%9C%86">鹿目まどか</a>，来自<a href="https://zh.moegirl.org.cn/%E9%AD%94%E6%B3%95%E5%B0%91%E5%A5%B3%E5%B0%8F%E5%9C%86">魔法少女まどか☆マギア</a></li><li>网站logo（主页面左上角）：<a href="https://zh.moegirl.org.cn/%E5%A4%A9%E7%8E%8B%E5%AF%BA%E7%92%83%E5%A5%88">天王寺璃奈</a>，来自<a href="https://nijigaku.club/">虹ヶ咲スクールアイドル同好会</a></li><li>个人头像（avatar）：<a href="https://zh.moegirl.org.cn/%E5%87%A4%E6%BB%A1">鳳ミチル</a>，来自<a href="https://zh.moegirl.org.cn/%E5%B0%91%E5%A5%B3%E6%AD%8C%E5%89%A7_Revue_Starlight_-Re_LIVE-">少女☆歌剧 Revue Starlight</a></li></ul><blockquote><p>新歌 <strong>命尽きても尽き果てず</strong> 吹爆！</p></blockquote><ul><li>archives页首：クラリス(ClariS)</li><li>文章封面：<a href="https://zh.moegirl.org.cn/%E9%AD%94%E6%B3%95%E5%B0%91%E5%A5%B3%E5%B0%8F%E5%9C%86">魔法少女まどか☆マギア</a>的剧照、同人图等</li></ul><h1>网站概览</h1><ul><li>框架：hexo</li><li>服务器：github</li><li>域名：dynadot</li><li>主题：butterfly</li></ul><h1>域名说明</h1><p>kotobanoniwa，是日语<strong>言葉の庭</strong>的罗马音，译为 <strong>语言的庭院</strong>。</p>]]></content>
+        <content type="html"><![CDATA[<h1>about me</h1><ul><li>海河中下游某大学天坑专业就读</li><li>兴趣丰富，但一事无成</li><li>二次元爱好者，魔圆忠实粉丝（看配图就知道了嘛）</li><li>原三次元爱好者，主推乃木坂46的日奈子ちゃん</li><li>喜欢苏联史和中华人民共和国国史</li><li>python ing</li></ul><h1>配图说明</h1><ul><li>网页图标（favicon）：<a href="https://zh.moegirl.org.cn/%E9%B9%BF%E7%9B%AE%E5%9C%86">鹿目まどか</a>，来自<a href="https://zh.moegirl.org.cn/%E9%AD%94%E6%B3%95%E5%B0%91%E5%A5%B3%E5%B0%8F%E5%9C%86">魔法少女まどか☆マギア</a></li><li>网站logo（主页面左上角）：<a href="https://zh.moegirl.org.cn/%E5%A4%A9%E7%8E%8B%E5%AF%BA%E7%92%83%E5%A5%88">天王寺璃奈</a>，来自<a href="https://nijigaku.club/">虹ヶ咲スクールアイドル同好会</a></li><li>个人头像（avatar）：<a href="https://zh.moegirl.org.cn/%E5%87%A4%E6%BB%A1">鳳ミチル</a>，来自<a href="https://zh.moegirl.org.cn/%E5%B0%91%E5%A5%B3%E6%AD%8C%E5%89%A7_Revue_Starlight_-Re_LIVE-">少女☆歌剧 Revue Starlight</a></li></ul><blockquote><p>新歌 <strong>命尽きても尽き果てず</strong> 吹爆！</p></blockquote><ul><li>archives页首：クラリス(ClariS)</li><li>文章封面：<a href="https://zh.moegirl.org.cn/%E9%AD%94%E6%B3%95%E5%B0%91%E5%A5%B3%E5%B0%8F%E5%9C%86">魔法少女まどか☆マギア</a>的剧照、同人图等</li></ul><h1>网站概览</h1><ul><li>框架：hexo</li><li>服务器：github | gitee</li><li>域名：dynadot</li><li>主题：butterfly</li></ul><h1>域名说明</h1><p>kotobanoniwa，是日语<strong>言葉の庭</strong>的罗马音，译为 <strong>语言的庭院</strong>。</p>]]></content>
       
     </entry>
     
