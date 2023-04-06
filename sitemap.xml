@@ -2,6 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://liubaichen.github.io/posts/49af6954/</loc>
+    
+    <lastmod>2023-04-06</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://liubaichen.github.io/posts/2664/</loc>
+    
+    <lastmod>2023-04-06</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://liubaichen.github.io/posts/6edc6e28/</loc>
     
     <lastmod>2023-04-06</lastmod>
@@ -66,15 +84,6 @@
   
   <url>
     <loc>https://liubaichen.github.io/posts/12309/</loc>
-    
-    <lastmod>2023-04-05</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://liubaichen.github.io/posts/2664/</loc>
     
     <lastmod>2023-04-05</lastmod>
     
@@ -379,6 +388,13 @@
     <priority>0.2</priority>
   </url>
   
+  <url>
+    <loc>https://liubaichen.github.io/tags/English/</loc>
+    <lastmod>2023-04-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
 
   
   <url>
@@ -411,6 +427,13 @@
   
   <url>
     <loc>https://liubaichen.github.io/categories/%E5%8C%96%E5%AD%A6/</loc>
+    <lastmod>2023-04-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://liubaichen.github.io/categories/daily/</loc>
     <lastmod>2023-04-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
