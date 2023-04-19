@@ -4,11 +4,11 @@
   
     
     <entry>
-      <title>数据分类和拟合</title>
+      <title></title>
       <link href="/posts/ba53d637/"/>
       <url>/posts/ba53d637/</url>
       
-        <content type="html"><![CDATA[<h2 id="K-交叉验证">K-交叉验证</h2><p>深度学习使用的数据将分为训练数据、验证数据和测试数据。其中验证数据被用于检验和优化超参数，可以被调用多次。验证数据是用来测试模型的泛化误差，一般只使用一次。三者之间不能存在重复。一般获得的原始数据被划分为训练数据和验证数据，测试数据原则上需要另外寻找（甚至是一些并不知道答案的数据）。如果原始数据过少，训练数据和测试数据的数量并不好分配。常用的方法是K-交叉验证，将原始数据集分为K个子集，在K-1个子集上训练，然后用另一个子集验证，执行K次训练，最后取平均值估计误差。K一般取5或10.</p><h2 id="过拟合">过拟合</h2><p><img src="https://picgo-liubaichen.oss-cn-beijing.aliyuncs.com/overfitting_and_underfitting.webp" alt=""></p><p>模型容量（模型复杂度）有两个主要影响因素：参数的个数和参数值的选择范围</p><p>数据复杂度的影响因素：样本个数、样本中的元素个数、时间/空间结构、多样性（如何分类）</p>]]></content>
+        <content type="html"><![CDATA[<h2 id="K-交叉验证">K-交叉验证</h2><p>深度学习使用的数据将分为训练数据、验证数据和测试数据。其中验证数据被用于检验和优化超参数，可以被调用多次。验证数据是用来测试模型的泛化误差，一般只使用一次。三者之间不能存在重复。一般获得的原始数据被划分为训练数据和验证数据，测试数据原则上需要另外寻找（甚至是一些并不知道答案的数据）。如果原始数据过少，训练数据和测试数据的数量并不好分配。常用的方法是K-交叉验证，将原始数据集分为K个子集，在K-1个子集上训练，然后用另一个子集验证，执行K次训练，最后取平均值估计误差。K一般取5或10.</p><h2 id="过拟合">过拟合</h2><p><img src="https://picgo-liubaichen.oss-cn-beijing.aliyuncs.com/overfitting_and_underfitting.webp" alt=""></p><p>模型容量（模型复杂度）有两个主要影响因素：参数的个数和参数值的选择范围</p><p>数据复杂度的影响因素：样本个数、样本中的元素个数、时间/空间结构、多样性（如何分类）</p><h2 id="参数初始化">参数初始化</h2><p>梯度爆炸和梯度消失会产生许多问题。为了让梯度分布在合理的区间内，参数初始化是一个比较基础的方法，更高级的还有梯度归一化、resnet、LSTM等。梯度归一化的一个思想是假设所有的输出值和梯度为方差和均值保持一致的随机变量，这样输出和梯度都会分布在可控的区间内（没有激活函数）。基于这种假设可以推导出方差应该满足： $ \gamma_t = \frac{2}{n_{t-1}+n_t} $ ，n-1和n分别代表t层的输入维度数和输出维度数。</p><p>正态分布： $ \mathcal{N}\left(0, \sqrt{2 /\left(n_{t-1}+n_{t}\right)}\right) $<br>均匀分布： $ \mathcal{N}\left(0, \sqrt{2 /\left(n_{t-1}+n_{t}\right)}\right)\mathcal{U}\left(-\sqrt{6 /\left(n_{t-1}+n_{t}\right)}, \sqrt{6 /\left(n_{t-1}+n_{t}\right)}\right) $</p><blockquote><p>均匀分布 $ \mathcal{N} (-a,a)$ 的方差为 $ \frac{a^2}{3} $</p></blockquote><p>假设激活函数是线性函数（当然实际上不行），采用上述假设可以推导出激活函数必须为y=x。常见的激活函数中，sigmoid在0附近的泰勒展开为 $\frac{1}{2}+\frac{x}{4} $ ，因此效果不算好，可以使用4*sigmoid-2作为优化。tanh和relu函数在0附近都可以做y=x近似。</p><p><img src="https://picgo-liubaichen.oss-cn-beijing.aliyuncs.com/activation_function.webp" alt=""></p><p>Xavier初始化使用正态分布，改进型Kaiming初始化对于ReLU函数使用均匀分布，对于其他激活函数使用正态分布。</p>]]></content>
       
       
       <categories>
