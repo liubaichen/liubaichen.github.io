@@ -1,0 +1,319 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"><title>使用Alexnet处理mnist | Welcome to kotobanoniwa</title><meta name="author" content="Liu baichen"><meta name="copyright" content="Liu baichen"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="参考图书：《动手学深度学习》 本节内容基于卷积神经网络、lexnet和alexnet的基础内容，请参考卷积神经网络基础 预处理 alexnet框架针对的是224*224的图片，但是mnist只有28*28，因此首先要进行预处理 12345678910111213141516171819202122232425262728293031323334import torchimport pandas a">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用Alexnet处理mnist">
+<meta property="og:url" content="https://liubaichen.github.io/posts/b12fe7b5/index.html">
+<meta property="og:site_name" content="Welcome to kotobanoniwa">
+<meta property="og:description" content="参考图书：《动手学深度学习》 本节内容基于卷积神经网络、lexnet和alexnet的基础内容，请参考卷积神经网络基础 预处理 alexnet框架针对的是224*224的图片，但是mnist只有28*28，因此首先要进行预处理 12345678910111213141516171819202122232425262728293031323334import torchimport pandas a">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://picgo-liubaichen.oss-cn-beijing.aliyuncs.com/bp10.webp">
+<meta property="article:published_time" content="2023-05-05T02:52:43.000Z">
+<meta property="article:modified_time" content="2023-05-05T07:58:25.608Z">
+<meta property="article:author" content="Liu baichen">
+<meta property="article:tag" content="深度学习">
+<meta property="article:tag" content="pytorch">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://picgo-liubaichen.oss-cn-beijing.aliyuncs.com/bp10.webp"><link rel="shortcut icon" href="/img/favicon.jpg"><link rel="canonical" href="https://liubaichen.github.io/posts/b12fe7b5/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//www.google-analytics.com" crossorigin=""/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin=""/><meta name="google-site-verification" content="G-F8JFWLJ64K"/><meta name="baidu-site-verification"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?c0ba518e647522d0484a4fd9f90b8f8d";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-F8JFWLJ64K"></script><script>window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-F8JFWLJ64K');
+</script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  }
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '使用Alexnet处理mnist',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-05-05 15:58:25'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Welcome to kotobanoniwa" type="application/atom+xml">
+</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><script>const preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',()=> { preloader.endLoading() })
+
+if (true) {
+  document.addEventListener('pjax:send', () => { preloader.initLoading() })
+  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+}</script><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/face.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">43</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">11</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://picgo-liubaichen.oss-cn-beijing.aliyuncs.com/bp10.webp')"><nav id="nav"><span id="blog-info"><a href="/" title="Welcome to kotobanoniwa"><img class="site-icon" src="/img/website.png"/><span class="site-name">Welcome to kotobanoniwa</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">使用Alexnet处理mnist</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-05-05T02:52:43.000Z" title="发表于 2023-05-05 10:52:43">2023-05-05</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-05-05T07:58:25.608Z" title="更新于 2023-05-05 15:58:25">2023-05-05</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/python/">python</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.8k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>8分钟</span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>参考图书：<a target="_blank" rel="noopener external nofollow noreferrer" href="https://zh-v2.d2l.ai/index.html">《动手学深度学习》</a></p>
+<p>本节内容基于卷积神经网络、lexnet和alexnet的基础内容，请参考<a target="_blank" rel="noopener external nofollow noreferrer" href="https://kotobanoniwa.xyz/posts/dd983220/">卷积神经网络基础</a></p>
+<h1>预处理</h1>
+<p>alexnet框架针对的是224*224的图片，但是mnist只有28*28，因此首先要进行预处理</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd </span><br><span class="line"><span class="keyword">from</span> torch.utils <span class="keyword">import</span> data</span><br><span class="line"><span class="keyword">from</span> torch <span class="keyword">import</span> nn</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line"><span class="comment"># 导入colab自带的mnist数据集</span></span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line">df_train = pd.read_csv(os.path.join(<span class="string">&quot;sample_data&quot;</span>,<span class="string">&quot;mnist_train_small.csv&quot;</span>))</span><br><span class="line">df_test = pd.read_csv(os.path.join(<span class="string">&quot;sample_data&quot;</span>,<span class="string">&quot;mnist_test.csv&quot;</span>))</span><br><span class="line"><span class="comment"># 这里features的dtype必须转为float型，否则在后面处理时会报错</span></span><br><span class="line">train_features = np.array(df_train.values[:<span class="number">19900</span>,<span class="number">1</span>:], dtype=np.float32)</span><br><span class="line">train_labels = np.array(df_train.values[:<span class="number">19900</span>,<span class="number">0</span>])</span><br><span class="line">test_features = np.array(df_test.values[:<span class="number">9900</span>,<span class="number">1</span>:], dtype=np.float32)</span><br><span class="line">test_labels = np.array(df_test.values[:<span class="number">9900</span>,<span class="number">0</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment"># 预处理mnist图像到224*224</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">preprocess_mnist_image</span>(<span class="params">img</span>):</span><br><span class="line">    <span class="comment"># 缩放图像</span></span><br><span class="line">    img = cv2.resize(img, (<span class="number">224</span>, <span class="number">224</span>), interpolation=cv2.INTER_LINEAR)</span><br><span class="line">    <span class="comment"># 填充图像</span></span><br><span class="line">    width, height = img.shape[:<span class="number">2</span>]</span><br><span class="line">    ratio = <span class="number">224</span> / <span class="built_in">max</span>(width, height)</span><br><span class="line">    new_width = <span class="built_in">int</span>(ratio * width)</span><br><span class="line">    new_height = <span class="built_in">int</span>(ratio * height)</span><br><span class="line">    delta_w = <span class="number">224</span> - new_width</span><br><span class="line">    delta_h = <span class="number">224</span> - new_height</span><br><span class="line">    top, bottom = delta_h//<span class="number">2</span>, delta_h-(delta_h//<span class="number">2</span>)</span><br><span class="line">    left, right = delta_w//<span class="number">2</span>, delta_w-(delta_w//<span class="number">2</span>)</span><br><span class="line">    img = cv2.copyMakeBorder(img, top, bottom, left, right, cv2.BORDER_CONSTANT, value=[<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>])</span><br><span class="line">    <span class="keyword">return</span> img</span><br></pre></td></tr></table></figure>
+<p>preprocess_mnist_image函数完全由chatgpt完成，且没有做任何修改就可以使用，具体实现我也不太懂。不过主要功能是输入numpy类型的28*28图像，使用双线性插值法扩充为224*224的图像。在实操后发现由于缩放前后宽高比相同，第一句代码的resize函数已经将图像成功缩放到了224*224，因此实际上不需要后面的填充图像部分。如果缩放前后的宽高比不同，填充图像部分的代码会在图像周围添加黑色边框。缩放前后的效果如下：</p>
+<p><img src="https://picgo-liubaichen.oss-cn-beijing.aliyuncs.com/20230505143518.webp" alt=""></p>
+<p>在之前的学习中都是将全部test和train数据统一处理后用DataLoader函数打包进tensor数据集</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 将数据分为mini-batch</span></span><br><span class="line"><span class="comment"># tensordataset函数将多个tensor打包为一个集合,然后使用dataloader函数划分数据</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">load_array</span>(<span class="params">data_arrays, batch_size, is_train=<span class="literal">True</span></span>):  </span><br><span class="line">    <span class="string">&quot;&quot;&quot;构造一个PyTorch数据迭代器&quot;&quot;&quot;</span></span><br><span class="line">    dataset = data.TensorDataset(*data_arrays)</span><br><span class="line">    <span class="keyword">return</span> data.DataLoader(dataset, batch_size, shuffle=is_train)</span><br></pre></td></tr></table></figure>
+<p>这样做的最大问题在一股脑地将大量数据扔进内存中。之前这么处理没有问题是因为数据本身较小，仅占2G左右，对于colab来说绰绰有余。但是将数据扩充后，colab就吃不消了。因此需要用python的iterator功能动态生成mini-batch（下面的代码全部由chatgpt完成）。chatgpt基于data.Dataset自定义了MNISTDataset类。传入数据不变，在内部将传入数据中的features部分进行预处理，然后返回处理后的features和label。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">MNISTDataset</span>(data.Dataset):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, X, y</span>):</span><br><span class="line">        self.X = X</span><br><span class="line">        self.y = y</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__len__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">len</span>(self.X)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__getitem__</span>(<span class="params">self, idx</span>):</span><br><span class="line">        img = np.reshape(self.X[idx], (<span class="number">28</span>, <span class="number">28</span>))</span><br><span class="line">        img = preprocess_mnist_image(img)</span><br><span class="line">        img = torch.from_numpy(img).<span class="built_in">float</span>()</span><br><span class="line">        label = torch.from_numpy(np.array(self.y[idx])).long()</span><br><span class="line">        <span class="keyword">return</span> img, label</span><br><span class="line"></span><br><span class="line">batch_size = <span class="number">100</span></span><br><span class="line"></span><br><span class="line">train_dataset = MNISTDataset(train_features, train_labels)</span><br><span class="line">test_dataset = MNISTDataset(test_features, test_labels)</span><br><span class="line"></span><br><span class="line">train_iter = data.DataLoader(train_dataset, batch_size=batch_size, shuffle=<span class="literal">True</span>)</span><br><span class="line">test_iter = data.DataLoader(test_dataset, batch_size=batch_size, shuffle=<span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
+<h1>NN框架</h1>
+<p>终于来到alexnet最核心的地方了。但真正实现起来反而是最简单的一部分，与lenet相比也就多了几行代码（多亏了pytorch的帮助）。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 将input转化为四维张量</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Reshape</span>(torch.nn.Module):</span><br><span class="line">  <span class="keyword">def</span> <span class="title function_">forward</span>(<span class="params">self,x</span>):</span><br><span class="line">    <span class="keyword">return</span> x.view(-<span class="number">1</span>,<span class="number">1</span>,<span class="number">224</span>,<span class="number">224</span>)</span><br><span class="line"></span><br><span class="line">net = nn.Sequential(</span><br><span class="line">    Reshape(),</span><br><span class="line">    nn.Conv2d(<span class="number">1</span>, <span class="number">96</span>, kernel_size=<span class="number">11</span>, stride=<span class="number">4</span>, padding=<span class="number">1</span>), nn.ReLU(),</span><br><span class="line">    nn.MaxPool2d(kernel_size=<span class="number">3</span>, stride=<span class="number">2</span>),</span><br><span class="line">    nn.Conv2d(<span class="number">96</span>, <span class="number">256</span>, kernel_size=<span class="number">5</span>, padding=<span class="number">2</span>), nn.ReLU(),</span><br><span class="line">    nn.MaxPool2d(kernel_size=<span class="number">3</span>, stride=<span class="number">2</span>),</span><br><span class="line">    nn.Conv2d(<span class="number">256</span>, <span class="number">384</span>, kernel_size=<span class="number">3</span>, padding=<span class="number">1</span>), nn.ReLU(),</span><br><span class="line">    nn.Conv2d(<span class="number">384</span>, <span class="number">384</span>, kernel_size=<span class="number">3</span>, padding=<span class="number">1</span>), nn.ReLU(),</span><br><span class="line">    nn.Conv2d(<span class="number">384</span>, <span class="number">256</span>, kernel_size=<span class="number">3</span>, padding=<span class="number">1</span>), nn.ReLU(),</span><br><span class="line">    nn.MaxPool2d(kernel_size=<span class="number">3</span>, stride=<span class="number">2</span>),</span><br><span class="line">    nn.Flatten(),</span><br><span class="line">    nn.Linear(<span class="number">6400</span>, <span class="number">4096</span>), nn.ReLU(),</span><br><span class="line">    nn.Dropout(p=<span class="number">0.5</span>),</span><br><span class="line">    nn.Linear(<span class="number">4096</span>, <span class="number">4096</span>), nn.ReLU(),</span><br><span class="line">    nn.Dropout(p=<span class="number">0.5</span>),</span><br><span class="line">    nn.Linear(<span class="number">4096</span>, <span class="number">10</span>))</span><br></pre></td></tr></table></figure>
+<p>与lenet的主要区别：除了核大小、卷积层数的变化外，新引入了dropout、relu函数和maxpool层。</p>
+<h1>result</h1>
+<p>结构复杂起来后，参数的影响变得显著起来。由于使用relu函数，应采用较小的学习率。这里首先采用书上使用的0.01，参数更新方法使用SGD。逐渐向上调整lr的过程中发现，迭代情况变化非常迅速，lr=0.05时与lr=0.01时基本相同，lr=0.1时由于loss无法计算导致参数无法更新。nan（not a number）表示数值计算异常，可能是出现了0/0、ln(0)等情况。尝试搭配权重衰减和lr=0.1使用，train loss仍为nan。尝试在lr=0.01计算上进一步减小学习率，并加上权重衰减，效果并没有明显提升。</p>
+<p>SGD，lr=0.01，epoch=10</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Epoch [<span class="number">1</span>/<span class="number">10</span>], Train Loss: <span class="number">0.0061</span>, Train Accuracy: <span class="number">80.24</span>%, Test Accuracy: <span class="number">95.47</span>%</span><br><span class="line">Epoch [<span class="number">2</span>/<span class="number">10</span>], Train Loss: <span class="number">0.0012</span>, Train Accuracy: <span class="number">96.27</span>%, Test Accuracy: <span class="number">97.47</span>%</span><br><span class="line">Epoch [<span class="number">9</span>/<span class="number">10</span>], Train Loss: <span class="number">0.0002</span>, Train Accuracy: <span class="number">99.26</span>%, Test Accuracy: <span class="number">98.87</span>%</span><br><span class="line">Epoch [<span class="number">10</span>/<span class="number">10</span>], Train Loss: <span class="number">0.0002</span>, Train Accuracy: <span class="number">99.23</span>%, Test Accuracy: <span class="number">98.88</span>%</span><br></pre></td></tr></table></figure>
+<p><img src="https://picgo-liubaichen.oss-cn-beijing.aliyuncs.com/20230505110937.webp" alt=""></p>
+<p>SGD, lr=0.05, epoch=10</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Epoch [<span class="number">1</span>/<span class="number">10</span>], Train Loss: <span class="number">0.0230</span>, Train Accuracy: <span class="number">13.35</span>%, Test Accuracy: <span class="number">9.27</span>%</span><br><span class="line">Epoch [<span class="number">2</span>/<span class="number">10</span>], Train Loss: <span class="number">0.0216</span>, Train Accuracy: <span class="number">23.37</span>%, Test Accuracy: <span class="number">8.99</span>%</span><br><span class="line">Epoch [<span class="number">3</span>/<span class="number">10</span>], Train Loss: <span class="number">0.0211</span>, Train Accuracy: <span class="number">25.26</span>%, Test Accuracy: <span class="number">68.51</span>%</span><br><span class="line">Epoch [<span class="number">9</span>/<span class="number">10</span>], Train Loss: <span class="number">0.0003</span>, Train Accuracy: <span class="number">99.13</span>%, Test Accuracy: <span class="number">98.29</span>%</span><br><span class="line">Epoch [<span class="number">10</span>/<span class="number">10</span>], Train Loss: <span class="number">0.0002</span>, Train Accuracy: <span class="number">99.25</span>%, Test Accuracy: <span class="number">98.91</span>%</span><br></pre></td></tr></table></figure>
+<p>SGD, lr=0.1, epoch=10</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Epoch [<span class="number">1</span>/<span class="number">10</span>], Train Loss: nan, Train Accuracy: <span class="number">9.80</span>%, Test Accuracy: <span class="number">9.79</span>%</span><br><span class="line">Epoch [<span class="number">2</span>/<span class="number">10</span>], Train Loss: nan, Train Accuracy: <span class="number">9.81</span>%, Test Accuracy: <span class="number">9.79</span>%</span><br><span class="line">Epoch [<span class="number">3</span>/<span class="number">10</span>], Train Loss: nan, Train Accuracy: <span class="number">9.81</span>%, Test Accuracy: <span class="number">9.79</span>%</span><br></pre></td></tr></table></figure>
+<p>SGD, lr=0.005, epoch=10, weight_decay=0.001</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Epoch [<span class="number">1</span>/<span class="number">10</span>], Train Loss: <span class="number">0.0061</span>, Train Accuracy: <span class="number">80.04</span>%, Test Accuracy: <span class="number">94.66</span>%</span><br><span class="line">Epoch [<span class="number">2</span>/<span class="number">10</span>], Train Loss: <span class="number">0.0014</span>, Train Accuracy: <span class="number">95.44</span>%, Test Accuracy: <span class="number">96.63</span>%</span><br><span class="line">Epoch [<span class="number">9</span>/<span class="number">10</span>], Train Loss: <span class="number">0.0004</span>, Train Accuracy: <span class="number">98.79</span>%, Test Accuracy: <span class="number">98.47</span>%</span><br><span class="line">Epoch [<span class="number">10</span>/<span class="number">10</span>], Train Loss: <span class="number">0.0003</span>, Train Accuracy: <span class="number">98.93</span>%, Test Accuracy: <span class="number">98.62</span>%</span><br></pre></td></tr></table></figure>
+<h1>模型的使用</h1>
+<p>之前一直在学习如何训练模型，但没有怎么使用过。训练模型之前我们将NN模型移到了GPU上以加快训练速度，但推理过程本身速度够快，无需在GPU上，因此需要先将模型从GPU移到CPU上。这里为了方便直接使用train数据：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 测试</span></span><br><span class="line">net = net.to(<span class="string">&#x27;cpu&#x27;</span>)</span><br><span class="line"><span class="keyword">for</span> X, y <span class="keyword">in</span> train_iter:</span><br><span class="line">    <span class="built_in">print</span>(X.shape, y.shape)</span><br><span class="line">    output=net(X[:<span class="number">5</span>])</span><br><span class="line">    <span class="built_in">print</span>(output)</span><br><span class="line">    <span class="built_in">print</span>(torch.argmax(output,dim=<span class="number">1</span>))</span><br><span class="line">    <span class="built_in">print</span>(y[:<span class="number">5</span>])</span><br><span class="line">    <span class="keyword">break</span> </span><br><span class="line">```</span><br><span class="line">torch.Size([<span class="number">100</span>, <span class="number">224</span>, <span class="number">224</span>]) torch.Size([<span class="number">100</span>])</span><br><span class="line">tensor([[ <span class="number">8.0577e+00</span>, -<span class="number">2.7128e+00</span>,  <span class="number">1.9408e+00</span>,  <span class="number">7.0632e-01</span>, -<span class="number">1.3653e+00</span>,</span><br><span class="line">         -<span class="number">5.7446e-01</span>,  <span class="number">7.0696e-01</span>, -<span class="number">2.5820e+00</span>, -<span class="number">1.8152e+00</span>, -<span class="number">3.3206e-01</span>],</span><br><span class="line">        [-<span class="number">1.7353e+00</span>,  <span class="number">1.2814e+01</span>,  <span class="number">9.6814e-01</span>, -<span class="number">2.5725e+00</span>, -<span class="number">3.9819e-01</span>,</span><br><span class="line">         -<span class="number">3.6534e+00</span>, -<span class="number">3.6662e+00</span>, -<span class="number">1.0881e+00</span>,  <span class="number">1.7450e+00</span>, -<span class="number">1.7823e+00</span>],</span><br><span class="line">        [ <span class="number">1.1222e+01</span>, -<span class="number">4.7647e+00</span>,  <span class="number">1.4974e+00</span>, -<span class="number">1.3909e+00</span>, -<span class="number">2.5974e+00</span>,</span><br><span class="line">         -<span class="number">1.6435e+00</span>,  <span class="number">4.0833e-01</span>, -<span class="number">1.8372e+00</span>, -<span class="number">2.1075e+00</span>,  <span class="number">2.0186e+00</span>],</span><br><span class="line">        [ <span class="number">1.8648e+00</span>, -<span class="number">2.7190e+00</span>, -<span class="number">3.6098e+00</span>, -<span class="number">4.5446e+00</span>,  <span class="number">2.7098e-01</span>,</span><br><span class="line">         -<span class="number">5.1653e-01</span>,  <span class="number">2.3106e+01</span>, -<span class="number">8.5419e+00</span>, -<span class="number">8.5070e-01</span>, -<span class="number">6.6404e+00</span>],</span><br><span class="line">        [-<span class="number">3.0372e+00</span>,  <span class="number">1.1296e+01</span>, -<span class="number">1.0653e-03</span>, -<span class="number">1.0007e+00</span>, -<span class="number">1.7746e-01</span>,</span><br><span class="line">         -<span class="number">2.7877e+00</span>, -<span class="number">2.3883e+00</span>, -<span class="number">1.5731e-01</span>, -<span class="number">3.5602e-01</span>, -<span class="number">1.6468e+00</span>]],</span><br><span class="line">       grad_fn=&lt;AddmmBackward0&gt;)</span><br><span class="line">tensor([<span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">6</span>, <span class="number">1</span>])</span><br><span class="line">tensor([<span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">6</span>, <span class="number">1</span>])</span><br><span class="line">```</span><br></pre></td></tr></table></figure>
+<p>可以看到前五个数据全部正确（废话，用train数据测试当然基本全对了）。当然也可以将推理所需的数据移动到GPU上</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> X, y <span class="keyword">in</span> train_iter:</span><br><span class="line">    X = X.to(<span class="string">&#x27;cuda&#x27;</span>)</span><br><span class="line">    y = y.to(<span class="string">&#x27;cuda&#x27;</span>)</span><br><span class="line">    <span class="built_in">print</span>(X.shape, y.shape)</span><br><span class="line">    output=net(X[:<span class="number">5</span>])</span><br><span class="line">    <span class="built_in">print</span>(output)</span><br><span class="line">    <span class="built_in">print</span>(torch.argmax(output,dim=<span class="number">1</span>))</span><br><span class="line">    <span class="built_in">print</span>(y[:<span class="number">5</span>])</span><br><span class="line">    <span class="keyword">break</span> </span><br></pre></td></tr></table></figure></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://liubaichen.github.io">Liu baichen</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://liubaichen.github.io/posts/b12fe7b5/">https://liubaichen.github.io/posts/b12fe7b5/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow noreferrer" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://liubaichen.github.io" target="_blank">Welcome to kotobanoniwa</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">深度学习</a><a class="post-meta__tags" href="/tags/pytorch/">pytorch</a></div><div class="post_share"><div class="social-share" data-image="https://picgo-liubaichen.oss-cn-beijing.aliyuncs.com/bp10.webp" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/posts/dd983220/" title="卷积神经网络基础"><img class="cover" src="https://picgo-liubaichen.oss-cn-beijing.aliyuncs.com/bp12.webp" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">卷积神经网络基础</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/posts/ba53d637/" title="参数与数据处理"><img class="cover" src="https://picgo-liubaichen.oss-cn-beijing.aliyuncs.com/bp2.webp" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-04-17</div><div class="title">参数与数据处理</div></div></a></div><div><a href="/posts/92fd094d/" title="pytorch解决简单的分类问题"><img class="cover" src="https://picgo-liubaichen.oss-cn-beijing.aliyuncs.com/bp9.webp" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-04-16</div><div class="title">pytorch解决简单的分类问题</div></div></a></div><div><a href="/posts/d14bfa85/" title="神经网络学习笔记"><img class="cover" src="https://picgo-liubaichen.oss-cn-beijing.aliyuncs.com/bp12.webp" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-04-16</div><div class="title">神经网络学习笔记</div></div></a></div><div><a href="/posts/8d88f5e2/" title="pytorch解决回归问题——以高次函数为例"><img class="cover" src="https://picgo-liubaichen.oss-cn-beijing.aliyuncs.com/bp9.webp" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-04-16</div><div class="title">pytorch解决回归问题——以高次函数为例</div></div></a></div><div><a href="/posts/dd983220/" title="卷积神经网络基础"><img class="cover" src="https://picgo-liubaichen.oss-cn-beijing.aliyuncs.com/bp12.webp" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-05-01</div><div class="title">卷积神经网络基础</div></div></a></div><div><a href="/posts/24073/" title="深度学习(1)——perceptron"><img class="cover" src="https://picgo-liubaichen.oss-cn-beijing.aliyuncs.com/bp2.webp" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-03-28</div><div class="title">深度学习(1)——perceptron</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/face.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Liu baichen</div><div class="author-info__description">摸鱼中...</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">43</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">11</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div><a id="card-info-btn" target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/liubaichen/liubaichen.github.io"><i class="fab fa-github"></i><span>github</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/liubaichen/liubaichen.github.io" rel="external nofollow noreferrer" target="_blank" title="Github"><i class="fab fa-github"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">预处理</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">NN框架</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">3.</span> <span class="toc-text">result</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">4.</span> <span class="toc-text">模型的使用</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/b12fe7b5/" title="使用Alexnet处理mnist"><img src="https://picgo-liubaichen.oss-cn-beijing.aliyuncs.com/bp10.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="使用Alexnet处理mnist"/></a><div class="content"><a class="title" href="/posts/b12fe7b5/" title="使用Alexnet处理mnist">使用Alexnet处理mnist</a><time datetime="2023-05-05T02:52:43.000Z" title="发表于 2023-05-05 10:52:43">2023-05-05</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/dd983220/" title="卷积神经网络基础"><img src="https://picgo-liubaichen.oss-cn-beijing.aliyuncs.com/bp12.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="卷积神经网络基础"/></a><div class="content"><a class="title" href="/posts/dd983220/" title="卷积神经网络基础">卷积神经网络基础</a><time datetime="2023-05-01T11:27:05.000Z" title="发表于 2023-05-01 19:27:05">2023-05-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/6a4b628f/" title="战后安排与冷战起源"><img src="https://picgo-liubaichen.oss-cn-beijing.aliyuncs.com/bp12.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="战后安排与冷战起源"/></a><div class="content"><a class="title" href="/posts/6a4b628f/" title="战后安排与冷战起源">战后安排与冷战起源</a><time datetime="2023-04-19T13:41:07.000Z" title="发表于 2023-04-19 21:41:07">2023-04-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/ba53d637/" title="参数与数据处理"><img src="https://picgo-liubaichen.oss-cn-beijing.aliyuncs.com/bp2.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="参数与数据处理"/></a><div class="content"><a class="title" href="/posts/ba53d637/" title="参数与数据处理">参数与数据处理</a><time datetime="2023-04-17T07:33:28.000Z" title="发表于 2023-04-17 15:33:28">2023-04-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/8d88f5e2/" title="pytorch解决回归问题——以高次函数为例"><img src="https://picgo-liubaichen.oss-cn-beijing.aliyuncs.com/bp9.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="pytorch解决回归问题——以高次函数为例"/></a><div class="content"><a class="title" href="/posts/8d88f5e2/" title="pytorch解决回归问题——以高次函数为例">pytorch解决回归问题——以高次函数为例</a><time datetime="2023-04-16T12:38:04.000Z" title="发表于 2023-04-16 20:38:04">2023-04-16</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2023 By Liu baichen</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Welcome to kotobanoniwa!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex/dist/contrib/copy-tex.min.js"></script><script>(() => {
+  document.querySelectorAll('#article-container span.katex-display').forEach(item => {
+    btf.wrap(item, 'div', { class: 'katex-wrap'})
+  })
+})()</script><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: 'gYWXNQxtQjnCNqN12eXIYtpl-gzGzoHsz',
+      appKey: 'kyVbdtKxRyyrjqAcGBai3xDp',
+      avatar: 'robohash',
+      serverURLs: '',
+      emojiMaps: "",
+      path: window.location.pathname,
+      visitor: true
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !true) {
+  if (true) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script></div><div class="aplayer no-destroy" data-id="8839201266" data-server="tencent" data-type="playlist" data-fixed="true" data-mini="true" data-autoplay="false" data-theme="#00477d" data-lrctype=0 data-order="random" data-volume=0.7 > </div><script defer="defer" id="fluttering_ribbon" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/metingjs/dist/Meting.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: true,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', 'G-F8JFWLJ64K', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/penchan.model.json"},"display":{"position":"right","width":200,"height":400,"hOffset":0,"vOffset":-60},"mobile":{"show":true},"react":{"opacity":0.75},"log":false});</script></body></html>
