@@ -6,7 +6,7 @@
   <link href="https://liubaichen.github.io/atom.xml" rel="self"/>
   
   <link href="https://liubaichen.github.io/"/>
-  <updated>2023-05-30T07:13:09.842Z</updated>
+  <updated>2023-05-30T15:36:28.931Z</updated>
   <id>https://liubaichen.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>中国内战中苏联的摇摆</title>
+    <link href="https://liubaichen.github.io/posts/b9c8e501/"/>
+    <id>https://liubaichen.github.io/posts/b9c8e501/</id>
+    <published>2023-05-30T15:34:00.000Z</published>
+    <updated>2023-05-30T15:36:28.931Z</updated>
+    
+    <content type="html"><![CDATA[<p>中国是</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;中国是&lt;/p&gt;
+</summary>
+      
+    
+    
+    
+    <category term="历史" scheme="https://liubaichen.github.io/categories/%E5%8E%86%E5%8F%B2/"/>
+    
+    
+    <category term="苏联史" scheme="https://liubaichen.github.io/tags/%E8%8B%8F%E8%81%94%E5%8F%B2/"/>
+    
+  </entry>
   
   <entry>
     <title>反抗命运，接受命运——回顾大学四年的得与失</title>
@@ -67,9 +92,9 @@
     <link href="https://liubaichen.github.io/posts/3b4c629f/"/>
     <id>https://liubaichen.github.io/posts/3b4c629f/</id>
     <published>2023-05-24T08:19:50.000Z</published>
-    <updated>2023-05-29T01:20:43.581Z</updated>
+    <updated>2023-05-31T04:15:43.866Z</updated>
     
-    <content type="html"><![CDATA[<p>don’t sweat it = stop worry about sth</p><p>pray for sth/sb</p><p>take advantage of 占便宜</p><p>pass out = become unconscious晕倒</p><p>prescribe (sb) sth for sth</p><p>bored with/of sb/sth</p><p>be furious at sth / with sb</p><p>stop nagging 别唠叨了</p><p>god bless you 感激或者祝福（bless在这里和类似语境下使用原形）</p><p>hang on (a second)  等一下（口语，中性或略带贬义）</p><p>it’s none of your business不关你的事</p><p>enough is enough够了，适可而止吧</p><p>on purpose = deliberately = intentionally 故意</p><p>pride yourself on sth引以为豪</p><p>throw up = vomit</p><p>a piece of cake   轻而易举的事</p><blockquote><p>it will be a piece a cake for me</p></blockquote><p>butter sb up ~ flatter sb   拍马屁，以甜言蜜语巴结某人</p><p>beat around the bush说话拐弯抹角</p><blockquote><p>stop beating around the bush and tell me what you what</p></blockquote><p>take your time不着急，慢慢来</p><p>I need to use the washroom</p><p>Don’t take me wrong   不要误解我（我不是这个意思）</p><p>pick up ~ answer the phone</p>]]></content>
+    <content type="html"><![CDATA[<p>don’t sweat it = stop worry about sth</p><p>pray for sth/sb</p><p>take advantage of 占便宜</p><p>pass out = become unconscious晕倒</p><p>prescribe (sb) sth for sth</p><p>bored with/of sb/sth</p><p>be furious at sth / with sb</p><p>stop nagging 别唠叨了</p><p>god bless you 感激或者祝福（bless在这里和类似语境下使用原形）</p><p>hang on (a second)  等一下（口语，中性或略带贬义）</p><p>it’s none of your business不关你的事</p><p>enough is enough够了，适可而止吧</p><p>on purpose = deliberately = intentionally 故意</p><p>pride yourself on sth引以为豪</p><p>throw up = vomit</p><p>a piece of cake   轻而易举的事</p><blockquote><p>it will be a piece a cake for me</p></blockquote><p>butter sb up ~ flatter sb   拍马屁，以甜言蜜语巴结某人(也可以中性的说法)</p><p>beat around the bush说话拐弯抹角</p><blockquote><p>stop beating around the bush and tell me what you what</p></blockquote><p>take your time不着急，慢慢来</p><p>I need to use the washroom</p><p>Don’t take me wrong   不要误解我（我不是这个意思）</p><p>pick up ~ answer the phone</p><p>on cloud nine ~ extremely happy</p><p>hit the sack ~ go to bed</p><p>give sb  a sack ~ sack sb ~ fire sb</p><p>I am all ears我洗耳恭听（全神贯注地听）</p><p>brush sb off ~ rudely ignore sb无视某人</p><p>hold your horses且慢，不要着急</p>]]></content>
     
     
       
@@ -152,9 +177,9 @@
     <link href="https://liubaichen.github.io/posts/f0a32b96/"/>
     <id>https://liubaichen.github.io/posts/f0a32b96/</id>
     <published>2023-05-13T10:14:00.000Z</published>
-    <updated>2023-05-30T09:56:10.398Z</updated>
+    <updated>2023-05-31T07:49:05.667Z</updated>
     
-    <content type="html"><![CDATA[<p>用于记录近期动态</p><h1>python 爬虫</h1><p>时间线：2月底-3月底</p><h2 id="2023-3-4">2023.3.4</h2><p>今日工作：浅尝辄止地学习了html、css和javascript，可以读懂基本语句；回顾了布朗运动、fick第一定律；开始学习python爬虫。</p><p>重现<em>书</em>中的代码，根据元素的属性爬取《战争与和平》节选部分中的全部人名。</p><blockquote><p>Python网络数据采集</p></blockquote><p>为了能大概看懂网站的配置文件，html、css和javascript还是有必要了解的。</p><blockquote><p><a href="https://www.w3schools.com/html/default.asp">https://www.w3schools.com/html/default.asp</a></p></blockquote><blockquote><p>本来是想放些代码上去的，但不知道怎样避免冲突，那就先这样吧…</p></blockquote><h2 id="2023-3-8">2023.3.8</h2><p>今日工作：</p><ol><li>beautifulsoup学习，成功爬取了博客主页的文章title、abstract和对应文章的主体内容（终于有了一点小小的成就感）</li><li>开始把以前写的draft发到网站上</li></ol><hr><p>今天晚上开始学习requests的时候发生了一个重大错误：我把py文件命名成了requests！！！<br>然后就开始疯狂报错…<br>最开始我认为是刚刚pip install，所以重启了vscode。然后又尝试了换一个文件等等，最后突然意识到好像命名有问题…</p><h2 id="2023-3-10">2023.3.10</h2><ul><li>about regex</li></ul><p>main point</p><ol><li>if <em>(.*?)</em> lies in the last of regex, you will get nothing!!!</li><li>remember compile regex with optional modifiers such as <em>re.M</em> firstly or directly write regex when you use it just like</li></ol><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    regex = re.<span class="built_in">compile</span>(regex,optional modifier)</span><br><span class="line">    content_1 = regex.findall(<span class="built_in">str</span>)</span><br><span class="line">    --------------------------------------------------- </span><br><span class="line">    content_2 = re.findall(regex,<span class="built_in">str</span>,optional modifier)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="2023-3-11">2023.3.11</h2><p>today’s work</p><ol><li>python basic knowledge: class and instance</li><li>scrape douban by requests</li><li>about html: div and li</li></ol><img src="https://picgo-liubaichen.oss-cn-beijing.aliyuncs.com/%E6%9C%AA%E5%91%BD%E5%90%8D%E5%9B%BE%E7%89%87.png" alt="我爱mami" title="疯狂迫害" style="zoom: 50%;" /><h1>AI绘画</h1><h2 id="2023-3-23">2023.3.23</h2><p>今天按照b站up主秋大的贴心教程搞定了webui和lora的安装，并且成功在google的colab上训练了後藤ひとり的lora模型（因为显存可能不太够，还没在本地训练）</p><p>晚上在本地用中午训练的模型试了一下文生图，竟然有一张还 <s>不错</s> 的!</p><h2 id="2023-3-27">2023.3.27</h2><p>前天在c站看到Cheese Daddy’s Landscapes mix大模型，一眼就喜欢上了，今天花了一个小时就拿到了一张不错的图</p><h2 id="2023-4-5">2023.4.5</h2><p>这几天又陆续对3月27日的图进行了修改，并且尝试了纯风景图</p><img src="https://picgo-liubaichen.oss-cn-beijing.aliyuncs.com/fujiyama-shaonv.webp" style="zoom: 25%;" /><p>这张图我真的超级喜欢，就是背景的三个山头真的碍眼···想用inpaint修改一下结果发现容易出黑边，可能需要用ps修正，或者再学一学inpaint的技巧</p><p>这几天的使用让我对AI的迅速发展大受震惊，感觉自己之前就是一个原始人···总之非常感谢深度学习的研发者、模型分享者以及谷歌无偿的colab，让我这个没有任何艺术细胞的人能够体验到绘画的乐趣。</p><h1>SIF2</h1><h2 id="2023-4-15">2023.4.15</h2><p>今天lovelive sif2开服，早早就下载了，结果发现打开就报错（エラー），心想估计是手机没有google框架。下午在图书馆花了几十分钟按照youtube一个大佬的详细指导成功在鸿蒙3系统上用上了google框架。之前玩乃木坂音游的时候就有想过安装google框架，但是失败了；而且后来发现其实并不需要google，所以就没有继续下去。这次算是一劳永逸的解决了问题。</p><p><a href="https://www.youtube.com/watch?v=VaGeM-LU0Ug&amp;list=LL&amp;index=1">视频链接：一瓶奶油</a></p><img src="https://picgo-liubaichen.oss-cn-beijing.aliyuncs.com/sif2_rirari.webp" alt="rinari kawaii！" style="zoom: 25%;" /><p>りなちゃんが一番可愛い！！！</p><h1>BanG Dream!</h1><h2 id="2023-5-13">2023.5.13</h2><p>最近沉迷邦邦！好后悔没有早点入坑啊！5月7号买了日区初始号之后，又一次体会到了最初玩音游时候的快感，仿佛又回到了2020年刚开始接触乃木坂音游的时候。另外还真真切切地体会到了初始号的重要性，真就可以为所欲为地整30个10连！</p><h2 id="2023-5-20">2023.5.20</h2><p>今天用主号抽了一轮saaya的生日限定，结果就中了一个兰的5星，亏的血本无归（悲！）。一怒之下买了个小号，又抽了一轮，结果连个4星都无（大悲！）。</p><p>发誓以后主号必须谨慎抽卡，想爽就去小号···</p>]]></content>
+    <content type="html"><![CDATA[<p>用于记录近期动态</p><h1>python 爬虫</h1><p>时间线：2月底-3月底</p><h2 id="2023-3-4">2023.3.4</h2><p>今日工作：浅尝辄止地学习了html、css和javascript，可以读懂基本语句；回顾了布朗运动、fick第一定律；开始学习python爬虫。</p><p>重现<em>书</em>中的代码，根据元素的属性爬取《战争与和平》节选部分中的全部人名。</p><blockquote><p>Python网络数据采集</p></blockquote><p>为了能大概看懂网站的配置文件，html、css和javascript还是有必要了解的。</p><blockquote><p><a href="https://www.w3schools.com/html/default.asp">https://www.w3schools.com/html/default.asp</a></p></blockquote><blockquote><p>本来是想放些代码上去的，但不知道怎样避免冲突，那就先这样吧…</p></blockquote><h2 id="2023-3-8">2023.3.8</h2><p>今日工作：</p><ol><li>beautifulsoup学习，成功爬取了博客主页的文章title、abstract和对应文章的主体内容（终于有了一点小小的成就感）</li><li>开始把以前写的draft发到网站上</li></ol><hr><p>今天晚上开始学习requests的时候发生了一个重大错误：我把py文件命名成了requests！！！<br>然后就开始疯狂报错…<br>最开始我认为是刚刚pip install，所以重启了vscode。然后又尝试了换一个文件等等，最后突然意识到好像命名有问题…</p><h2 id="2023-3-10">2023.3.10</h2><ul><li>about regex</li></ul><p>main point</p><ol><li>if <em>(.*?)</em> lies in the last of regex, you will get nothing!!!</li><li>remember compile regex with optional modifiers such as <em>re.M</em> firstly or directly write regex when you use it just like</li></ol><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    regex = re.<span class="built_in">compile</span>(regex,optional modifier)</span><br><span class="line">    content_1 = regex.findall(<span class="built_in">str</span>)</span><br><span class="line">    --------------------------------------------------- </span><br><span class="line">    content_2 = re.findall(regex,<span class="built_in">str</span>,optional modifier)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="2023-3-11">2023.3.11</h2><p>today’s work</p><ol><li>python basic knowledge: class and instance</li><li>scrape douban by requests</li><li>about html: div and li</li></ol><img src="https://picgo-liubaichen.oss-cn-beijing.aliyuncs.com/%E6%9C%AA%E5%91%BD%E5%90%8D%E5%9B%BE%E7%89%87.png" alt="我爱mami" title="疯狂迫害" style="zoom: 50%;" /><h1>AI绘画</h1><h2 id="2023-3-23">2023.3.23</h2><p>今天按照b站up主秋大的贴心教程搞定了webui和lora的安装，并且成功在google的colab上训练了後藤ひとり的lora模型（因为显存可能不太够，还没在本地训练）</p><p>晚上在本地用中午训练的模型试了一下文生图，竟然有一张还 <s>不错</s> 的!</p><h2 id="2023-3-27">2023.3.27</h2><p>前天在c站看到Cheese Daddy’s Landscapes mix大模型，一眼就喜欢上了，今天花了一个小时就拿到了一张不错的图</p><h2 id="2023-4-5">2023.4.5</h2><p>这几天又陆续对3月27日的图进行了修改，并且尝试了纯风景图</p><img src="https://picgo-liubaichen.oss-cn-beijing.aliyuncs.com/fujiyama-shaonv.webp" style="zoom: 25%;" /><p>这张图我真的超级喜欢，就是背景的三个山头真的碍眼···想用inpaint修改一下结果发现容易出黑边，可能需要用ps修正，或者再学一学inpaint的技巧</p><p>这几天的使用让我对AI的迅速发展大受震惊，感觉自己之前就是一个原始人···总之非常感谢深度学习的研发者、模型分享者以及谷歌无偿的colab，让我这个没有任何艺术细胞的人能够体验到绘画的乐趣。</p><h1>SIF2</h1><h2 id="2023-4-15">2023.4.15</h2><p>今天lovelive sif2开服，早早就下载了，结果发现打开就报错（エラー），心想估计是手机没有google框架。下午在图书馆花了几十分钟按照youtube一个大佬的详细指导成功在鸿蒙3系统上用上了google框架。之前玩乃木坂音游的时候就有想过安装google框架，但是失败了；而且后来发现其实并不需要google，所以就没有继续下去。这次算是一劳永逸的解决了问题。</p><p><a href="https://www.youtube.com/watch?v=VaGeM-LU0Ug&amp;list=LL&amp;index=1">视频链接：一瓶奶油</a></p><img src="https://picgo-liubaichen.oss-cn-beijing.aliyuncs.com/sif2_rirari.webp" alt="rinari kawaii！" style="zoom: 25%;" /><p>りなちゃんが一番可愛い！！！</p><h1>BanG Dream!</h1><h2 id="2023-5-13">2023.5.13</h2><p>最近沉迷邦邦！好后悔没有早点入坑啊！5月7号买了日区初始号之后，又一次体会到了最初玩音游时候的快感，仿佛又回到了2020年刚开始接触乃木坂音游的时候。另外还真真切切地体会到了初始号的重要性，真就可以为所欲为地整30个10连！</p><h2 id="2023-5-20">2023.5.20</h2><p>今天用主号抽了一轮saaya的生日限定，结果就中了一个兰的5星，亏的血本无归（悲！）。一怒之下买了个小号，又抽了一轮，结果连个4星都无（大悲！）。</p><p>发誓以后主号必须谨慎抽卡，想爽就去小号···</p><h2 id="2023-5-31">2023.5.31</h2><p>新活动开启，第一次参加对邦活动。这次有saaya的限定5星，拿小号毫不犹豫地大抽特抽。前40抽没有一个四星本来都准备保底了，挂了日区vpn后，80抽和100多抽来了2个saaya，然后5星和4星一堆（活动的三个5星也全抽齐了），爽爆了好吧。以后抽卡必须挂日区vpn。</p><img src="https://picgo-liubaichen.oss-cn-beijing.aliyuncs.com/Screenshot_20230531_152304_jp.co.craftegg.band.webp" alt="Screenshot_20230531_152304_jp.co.craftegg.band" style="zoom: 25%;" />]]></content>
     
     
       
@@ -282,11 +307,11 @@
   </entry>
   
   <entry>
-    <title>战后安排与冷战起源</title>
+    <title>联合政府政策的推行和破产</title>
     <link href="https://liubaichen.github.io/posts/6a4b628f/"/>
     <id>https://liubaichen.github.io/posts/6a4b628f/</id>
     <published>2023-04-19T13:41:07.000Z</published>
-    <updated>2023-05-04T14:31:31.822Z</updated>
+    <updated>2023-05-30T15:46:01.009Z</updated>
     
     <content type="html"><![CDATA[<h1>联合政府政策的推行</h1><ul><li>1944年李维诺夫认为英美对抗将是战后的基本特征，这将成为美苏合作的良机</li><li>1944年9月橡树园会议，苏联明确支持联合国总部设在美国，以制约英国，并且促使美国参与国际事务</li></ul><p>斯大林采取了一系列举措，包括解散共产国际、公开宣传苏联道路不是唯一选择、推行联合政府政策等，其目的就是保证和平的外部环境。</p><p>二战中欧洲的共产党发展迅速，到1944年法国共产党有超过100万人，意大利共产党更是超过了200万人。而且不少共产党有自己的武装势力，如法共直接掌握25万人的义勇军游击队。斯大林推出联合政府政策后，法共和意共相继并入各国政府，但共产党其实并没有损失太多，对苏联的政策也没有反对。法共获得了26%的选票，社会党获得25%选票，这相当于左翼势力占了一半以上。但联合政府政策的推行依据实际上是基于1944年10月英苏之间著名的百分百协定。根据协定内容，苏联不插手希腊事务，要求希腊共产党将全部权力交给希腊政府（实则是成为英国的势力范围）。</p><h2 id="希腊内战">希腊内战</h2><p>希腊内战是二战后的第一场代理人战争，是苏联与西方国家冷战开始的缩影，因此有必要了解一下。</p><p>希腊共产党在1944年3月建立临时政府，控制了希腊的大部分领土。流亡海外的希腊国王乔治二世在开罗建立流亡政府，并得到了同盟国的承认。除希腊共产党控制的军队外，希腊全国民主同盟也在参与与意大利和德国的作战。希腊共产党、开罗流亡政府和全国民主同盟三个势力相互敌对，因此二战后期在希腊上演了四方乱斗（还有德意）的混乱局面。1944年10月德国全部撤出希腊，此时正是百分比协定的时间节点。英国军队和流亡政府紧随其后进驻雅典。依照希共军队的战斗力在当时物理控制全国轻而易举，但是他们听从了斯大林的旨意。12月，对百分比协定一无所知的希共军队举行游行示威，与政府发生流血冲突，成为希腊内战的导火索。希共与希共军队的关系因为百分比协定变得紧张，此外希共在撤出雅典前又到处搞暗杀和迫害活动，导致民意支持率大幅度下降。1946年随着苏联与西方国家的关系紧张，希腊内战一触即发。</p><p>尽管英国和苏联是造成希腊内战的罪魁祸首，但南斯拉夫和美国才是左右希腊内战的关键角色。铁托一心摆脱苏联的控制，因此希望借助支持希腊共产党巩固自己在巴尔干半岛的势力。二战后英国实力大削，无力支持希腊政府。1947年英军撤出后，美国取代了英国的地位，提供了大量援助。苏联仍然死脑筋地贯彻百分比协定就算了，1948年苏联和南斯拉夫分道扬镳后，希腊共产党内部就亲苏还是亲南的死亡选择题产生巨大分歧。结果是亲苏派获胜，对亲南派执行了大清洗。在战争的紧要关头还对自己人开刀，估计也就CP能干出这种缺心眼的事。南斯拉夫也是恨铁不成钢，迅速关闭了与希腊的边界，驱逐了所有的希共军队，也断了援助。希共还通过一系列军事上的骚操作（转游击战为大规模攻防战）浪费了战前的全部优势。1949年低残余的小部队逃到了阿尔巴尼亚，希腊内战结束。</p><blockquote><p>我是真的“佩服”苏联和希共的一根筋，一把好牌打得稀烂，能赢才奇了怪</p></blockquote><p>希腊内战是理解苏联（以及其他社会主义国家）政策决断的一个切入点。苏联僵化、独裁的体制决定了，苏联的政策决断存在极大的问题。首先是时局判断错误，战后（甚至是战前）美国的崛起和英国的衰弱都已经是板上钉钉的事，而苏联却反而呆板地执行已经名存实亡的百分比协定。其次是该果断的时候优柔寡断，该谨慎时鲁莽行事。</p><h1>联合政府政策的破产</h1><p>蒋介石在当时与美国走的更为接近，这是斯大林不愿看到的。为此他以参加对日作战为理由，和美国一起迫使中国承认外蒙古独立，然后又开始推行国民党和共产党的联合政府政策。但中共可不像东欧国家共产党那样容易控制，国共两党的战争一触即发，这标志着联合政府政策在亚洲的失败。西欧的形势也不乐观，从1946到1947年，法共、比利时共产党、意共相继被赶出（自愿退出）政府。东欧共产党也开始脱离苏联的控制，镇压反对派，逐渐将权力集中于自己手中。捷克斯洛伐克的二月事件——捷共夺权标志着联合政府政策的全面破产，也是冷战开始的重要信号。</p><p>联合政府政策是斯大林为了保证苏联外部环境安全的权宜之计、与西方国家和平发展的妥协以及其他社会主义道路的探索。斯大林设想在联合政府政策下东欧国家在步伐上与苏联保持一致，但是他显然低估了两种意识形态间的尖锐矛盾。在此背景下，斯大林在战后倡导的各国走不同形式的社会主义道路，又转变为了斯大林道路。</p><h2 id="捷克斯洛伐克道路">捷克斯洛伐克道路</h2><p>捷克斯洛伐克在社会主义道路上充满了悲情的色彩。1938年由于英法的绥靖政策，德国夺取了苏台德地区，次年则直接把捷克斯洛伐克肢解了。因此捷克斯洛伐克人不仅仇视德国，也仇视坐视不理的英国的法国，这在一定程度上反映为对苏好感度高。流亡政府总统贝奈斯认为战后捷克斯洛伐克的外交政策应该为：一半向西，一般向东，构建起东西方交流的桥梁；经济和政策政策应该吸收自由资本主义和社会主义的优点。但这种设想成立的前提是，东西方真的想和平交流。1943年12月苏联和捷克斯洛伐克签订合作条约，实现了贝奈斯长久以来的愿望，苏联也借此在东欧推广贝奈斯的政治策略（亲苏）。贝奈斯并非没有看到苏联与德国一起瓜分波兰等侵略行为，他在1943年曾这样分析时局：从俄国方面来说，与英国相比，他们更为不诚实。但是他错在相信了苏联，尽管当时苏联的联合政府政策可能是真心实意的。</p><p>1945年捷克斯洛伐克的政治势力在莫斯科召开会议，包括贝奈斯的流亡政府、捷共、斯共等。会议的结果是通过了政府声明科西策纲领，捷共和斯共占据了大量的政府关键岗位，但总的来看还称得上是联合政府。在1946年大选前，捷克斯洛伐克共存在两对敌对势力——捷克和斯洛伐克的民族冲突与社会主义的资本主义的意识形态冲突。不同政党为争夺选民采取了各种各样的措施，捷共最后凭借身后的群众基础取得最多选票（大企业甚至达到6成以上，出乎意料）。但不同于西欧和后来东欧其他国家的舞弊行径，捷克斯洛伐克的拉票手段干净了很多，其他政党和西方国家都同意选举是自由民主的。</p><blockquote><p>捷共（捷克斯洛伐克共产党）和斯共（斯洛伐克共产党）是两个政党，尽管后者事实上处于捷共莫斯科机构的领导之下</p></blockquote><p>大选后捷共虽然是捷克斯洛伐克的第一大党，但是斯大林和哥特瓦尔德等都坚信社会主义有不同于苏联的道路，知道马歇尔计划的提出。1947年初捷克斯洛伐克面临重大经济困难，6月份马歇尔提出的欧洲援助计划对捷来说简直是天赐良机。在经过激烈讨论后，7月7日捷政府（包括捷共）一致同意接受英法的邀请参加巴黎会议。这里的主要推动者是非共产党外交部长马萨里克。至于为什么哥特瓦尔德同意参加，可能的原因是苏联驻捷临时代办博德罗夫的工作出现了差错，未能将7日凌晨苏联的紧急电报告知哥特瓦尔德。但更为深层次的原因是，捷政府中捷共的势力并没有大到可以主导政府决断，并且哥特瓦尔德的立场也偏向中立。7月9日政府官员一行在访问莫斯科时同斯大林会谈，哥特瓦尔德和马萨利克都认为保持同西方的贸易对捷非常重要。在斯大林和莫洛托夫的威胁下，代表团成员被迫放弃参加巴黎会议。</p><blockquote><p>马萨里克于1948年神秘死亡，结合当时二月事变的背景，很难不怀疑是谋杀</p></blockquote><p>捷克斯洛伐克放弃参加马歇尔计划是捷经济与政治形势的转折点，此后捷共经过二月事变完全掌握政权，经济层面也开始转向斯大林模式，丧失了参与新的工业革命的机会使这个战前就已经实现工业化的发达国家落后于西方。</p><h2 id="捷共崛起">捷共崛起</h2><p>1947年的旱灾使捷政府不得不向美苏两个阵营求援。美国以捷未参加马歇尔计划为由拒绝给予援助，而且乐于看到哥特瓦尔德政府的手足无措。苏联为了保住其在捷克斯洛伐克的主导地位援助了大量粮食，这使得西方国家在捷的声望大跌。捷共还采取了一系列针对富人的强制性举措赢得了民心。除了粮食问题外，捷共通过指控斯洛伐克民主党的分裂阴谋除掉了反共势力。到1947年底，两大阵营都在为夺权做最后的努力。到1947年底，东欧国家中除了捷克斯洛伐克以外，其他国家的共产党都已经完成了夺权的工作。尽管大多数社会主义国家（包括苏联）都在谴责捷共行动缓慢，但是捷共依旧把争夺议会的多数席位作为自己的主要任务。这主要是由于捷克斯洛伐克在战前就拥有浓厚的议会传统。然而到了1948年初，情况与哥特瓦尔德的想法有很大的出入。由于社会民主党和国家社会党两个右翼政党的联合，使得捷共想要获得51%以上的选票的可能性几乎变成了0。国家社会党、天主教党和斯洛伐克民主党等右翼政党领导人达成了联合行动的协定，他们还获得了总统贝奈斯的支持。在形势的步步紧逼之下，哥特瓦尔德不得不向激进的共产党人做出妥协，表明共产党人可能会采取极端措施，以武力夺取政权。</p><p>1948年2月中旬以后，两个势力之间的斗争逐渐走向公开化。2月18日，苏联和美国的外交官也相继抵达布拉格。但是美国的到访显然只是出于立场上的支持，西方国家在捷克斯洛伐克问题上恪守了与苏联的约定，承认捷克斯洛伐克是苏联的势力范围。捷共掌握了占大多数的普通人，罢工和游行的浪潮逼迫贝奈斯将权力交给哥特瓦尔德。至此，联合政府政策彻底终结。</p>]]></content>
     
@@ -516,32 +541,6 @@
     
     
     <category term="苏联史" scheme="https://liubaichen.github.io/tags/%E8%8B%8F%E8%81%94%E5%8F%B2/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>音乐收藏</title>
-    <link href="https://liubaichen.github.io/posts/52394/"/>
-    <id>https://liubaichen.github.io/posts/52394/</id>
-    <published>2023-03-31T10:04:45.000Z</published>
-    <updated>2023-05-22T14:22:14.843Z</updated>
-    
-    <content type="html"><![CDATA[<p>自己倾向于在一段时间反复的听一首或几首歌（比如今天就突然想听大概一两年前特别喜欢的歌），呈现出明显的周期性，所以就想着记录一下（实际上也是音乐取向）</p><h2 id="魔法少女小圆">魔法少女小圆</h2><p>今天就是魔圆回顾专场，最近一个月每天都在听！整理了一下魔圆六个作品集中特别喜欢的歌曲，并且放到了自己的网站充当背景音乐。每一首都是百听不厌的经典！最喜欢的有we’re here for you, her new wings, <strong>her wings</strong>, happy ending, i miss you, rebirth, prelude to act 2, Nux Walpurgis, Terror adhaerens, Credens justitiam, Numquam vincar,fateful #4</p><h2 id="乃木坂46">乃木坂46</h2><p>时间：2017-2021，主推堀未央奈、北野日奈子（两人毕业后就退坑了），最仰慕的成员是橋本奈々未（入坑契机），即使已经隐退，乃团仍然充满着她的个人魅力。最喜欢サヨナラの意味（毫无疑问的最神曲且没有之一！），之后是冷たい水の中（最喜欢的solo曲）、きっかけ、命は美しい、いつかできるから今日できる、シンクロニシティ、別れ際はもっと好きになる、もう少しの夢。每次听到乃团的歌都会想起回不去的高中生活，回想起有乃团音乐陪伴下的每一天，好怀念啊！乃木坂46真真切切地改变了我的人生轨迹印象：首次接触日本的三次元文化；开始学日语；2018年6月膝盖因为运动受伤而做手术后，是命は美しい伴我度过一个个难熬的夜晚；竞赛结束回归高考的艰难时期，是いつかできるから今日できる和シンクロニシティ一次次让我从低谷中站起来；2018年底上海演唱会，沉醉于帰り道は遠回りしたくなる之中，甚至还为此和自己非常喜欢的老师吵了一架；2019年上半年，是キャラバンは眠らない和僕だけの光让我坦然面对。</p><h2 id="魔法使いの夜">魔法使いの夜</h2><p>魔夜的纯音乐真的是艺术品（在我心目中比肩魔圆的存在），在2021、2022年经常听，最喜欢的有蒼崎青子、five、久遠寺有珠、10th symphony type/MOON</p><h2 id="ClariS">ClariS</h2><p>除乃木坂46外最喜欢的女性团体，因为魔圆而了解。最喜欢的有コネクト（the first take ver. 完美还原魔圆永恒的物语结尾的交响乐！）、ひらひらひらら（一番大好き！）、忘れてもないよ、ルミナス、明日春が来たら、オルゴール</p><h2 id="雨宫天">雨宫天</h2><p>非常喜欢的一位女性声优，因为魔圆而了解，在2022年暑假期间每天都听。最喜欢的有paradox（the first take ver. 最佳好评！）、羽根輪舞（优雅）、フリイジア（一番大好き！）、ぽつり愛（新歌，最近单曲循环中）</p><h2 id="魔圆外传">魔圆外传</h2><p>与魔圆本篇一脉相承，音乐也是相当地出色，2022年暑期和下半学期经常听。最喜欢的有inception、intermediate（一番大好き！）、anxiety、wings of magius、叶えちゃお、山茶花の跡、revive</p><h2 id="无归属纯音乐篇">无归属纯音乐篇</h2><p>由于没有太多共同特征，因此只是准备列举一下：</p><ul><li>古典风格     miyako(from the album ancient city 2)、verdurous mountains（充满东方韵味的古典风格音乐）、brookside、love(S.E.N.E)、風のように、夜明、</li><li>火影忍者     五月雨</li><li>刀剑神域     swordland、a tender feeling、luminous sword</li><li>你的名字     theme of mitsuha（一首把我带入二次元世界的音乐）</li><li>缘之空       遠い空へ</li><li>怪物猎人     无名猎人的矜持</li></ul><h2 id="少女歌剧">少女歌剧</h2><p>由于我只看过TV和剧场版，所以对手游中的歌曲不太了解。2021和2020年经常听，最喜欢的有rondorondorondo（一番大好き！）、華恋とひかり、舞台少女心得 幕间（超级好听！）、星のダイアローグ、命尽きても尽き果てず、世界を灰にするまで、スタアライト、star parade、re：create（一番大好き！）、情熱の目覚めるとき</p><h2 id="當山みれい">當山みれい</h2><p>非常喜欢的女性歌手，2022年下半年经常听。最喜欢的有missing you、願いあの頃のキミへ、またねがあれば，其中前两首是我认为能够称之为传世经典的歌曲。</p><h2 id="MACO">MACO</h2><p>最喜欢的歌手（没有之一！），从2017年开始每年都会有一段时间疯狂单曲循环，人美声更美，无论是人声还是乐曲风格都是绝对的一流。最喜欢的有恋の道（一番大好き）、dear my friend、happy tears、運命、桜の木の下、however、story、hero(studio live version)、三月九日、夏風邪、再恋愛</p><h2 id="kalafina">kalafina</h2><p>因为魔圆而了解，非常有特色的女性乐队，非常可惜的是已经解散了（魔圆新剧场版的ed和插曲怎么办啊！！！）。最喜欢的有百火燎乱、君が光に変えていく、seventh heaven(一番大好き)、光の旋律、満天、ひかりふる、to the beginning()、magia[quattro]、君の銀の庭、believe</p><h2 id="miwa">miwa</h2><p>超级喜欢的女性歌手，嗓音很有特色。喜欢的有ヒカリへ、delight、don’t cry anymore、片想い、春になったら、ホイッスル君と過ごした日々</p><h2 id="平井坚">平井坚</h2><p>索尼一姐（×）的音色是真的逆天！最喜欢的有告白和gaining through losing</p><h2 id="back-number">back number</h2><p>因为堀未央奈而了解，日式乐团风格。最喜欢的有happy end、christmas song、花束、雨を濡らす雨のように</p><h2 id="LoveLive-虹咲学园学园偶像同好会">LoveLive!虹咲学园学园偶像同好会</h2><p>2020年接触，也是lovelive系列中唯一在推的团。雪菜的几首歌给我留下了深刻的印象，像是chase、melody，哀温之诗和决意之光也非常棒！</p><h2 id="Coldplay">Coldplay</h2><p>喜欢的为数不多的英语乐队，仅凭一首yellow就足以铭记。依然清晰地记得高中时读《沉睡的人鱼之家》（也是东野圭吾的作品中最喜欢的一部），单曲循环的歌就是yellow。此外还有paradise、viva la vida（太经典了）。</p><h2 id="bang-dream">bang dream</h2><p>2023年5月初新入坑邦邦，自然是最近听歌的主力。</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;自己倾向于在一段时间反复的听一首或几首歌（比如今天就突然想听大概一两年前特别喜欢的歌），呈现出明显的周期性，所以就想着记录一下（实际上也是音乐取向）&lt;/p&gt;
-&lt;h2 id=&quot;魔法少女小圆&quot;&gt;魔法少女小圆&lt;/h2&gt;
-&lt;p&gt;今天就是魔圆回顾专场，最近一个月每天都在听！整理了一下</summary>
-      
-    
-    
-    
-    <category term="diary" scheme="https://liubaichen.github.io/categories/diary/"/>
-    
-    
-    <category term="杂谈" scheme="https://liubaichen.github.io/tags/%E6%9D%82%E8%B0%88/"/>
     
   </entry>
   
